@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" id="ben">
+<head>
+	<meta charset="UTF-8">
+	<title>移动端图片上传截取插件photoClip.js</title>
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+ 	<meta name="apple-mobile-web-app-capable" content="yes" />
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+ 	<meta name="format-detection" content="telphone=no,email=no" />
+
+
+	<link rel="stylesheet" type="text/css" href="css/image_input.css" />
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+
+ 	<!-- <script type="text/javascript">
+ 		 var _width = $(window).width();
+ 			var _ziHao = 20 * (_width/320);
+ 			if(_width < 641){
+ 				$("#ben").css({"font-size":_ziHao + "px"})
+ 			}
+ 	</script> -->
+ 	<style type="text/css">
+ 		#lei{
+ 		
+ 			width: 500px;
+ 			height: 300px;
+ 			"position": "absolute";
+			"left": "50%";
+			"top": "50%"
+ 		}
+ 	</style>
+
+</head>
+<body>	
+<h5>click on the img</h5>
+	<section class="logo-license">
+		<div class="half">
+			<a class="logo" id="logox">
+				<img id="bgl" src="images/tx.png">
+			</a>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<article class="jq22-container">
+		<div id="clipArea">
+			<div id="lei" >
+
+			</div>
+		</div>
+		<div class="foot-use"  >
+			<div class="uploader1 blue" >
+				<input type="button" name="file" class="button" value="打开">
+				<input id="file" type="file" accept="image/*" multiple  />
+			</div>
+			<button id="clipBtn">截取</button>
+		</div>
+		<div id="view"></div>
+	</article>
+
+	<script src="js/iscroll-zoom.js"></script>
+	<script src="js/hammer.js"></script>
+	<script src="js/jquery.photoClip.js"></script>
+	<script>
+	var obUrl = ''
+	$("#clipArea").photoClip({
+		width: 300,
+		height: 300,
+		file: "#file",
+		view: "#view",
+		ok: "#clipBtn",
+		loadStart: function() {
+			console.log("loading");
+		},
+		loadComplete: function() {
+			console.log("complete");
+		},
+		clipFinish: function(dataURL) {
+			console.log(dataURL);//path
+		}
+	});
+	</script>
+	<script>
+	$(function(){
+		$("#logox").click(function(){
+			$(".jq22-container").show();
+		})
+		$("#clipBtn").click(function(){
+			$("#logox").empty();
+			$('#logox').append('<img src="' + imgsource + '" align="absmiddle" style=" width: 3rem;height: 3rem;">');
+			$(".jq22-container").hide();
+		})
+	});
+	</script>
+
+
+
+</body>
+</html>

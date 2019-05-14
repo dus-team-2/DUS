@@ -1,0 +1,173 @@
+.notice{
+    color: red;
+    font-size: 15px;
+}
+
+.explain{
+    color: #000;
+    font-size: 15px;
+}
+
+.btn{
+    background-color: #742e68;
+    border: white;
+}
+
+#show_pic{
+    height: 30%;
+    width: 25%;
+    float: left;
+
+}
+
+#profile_pic{
+
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.show_profile_info{
+    height: 100%;
+    width: 95%;
+    float: left;
+}
+
+#show_profile_info{
+    height: 100%;
+    width: 70%;
+    float: left;
+}
+
+
+.table_three_row th{
+    color: #742e68;
+    width: 35%;
+}
+
+.table_three_row td{
+    width: 25%;
+}
+
+.table_four_row th{
+    color: #742e68;
+    width: 30%;
+}
+
+.table_four_row td{
+   width: 30%;
+}
+
+.show_profile_info .table_two_row th {
+    color: #742e68;
+    width: 30%;
+
+}
+
+.show_profile_info .table_two_row td {
+    width: 65%;
+}
+
+
+.show_profile_info table *{
+    border: 0px;
+}
+
+.show_profile_info h3,h2{
+    color: #742e68;
+}
+
+
+
+#modify_btn_container{
+    text-align: right ;
+    width: 90%;
+}
+
+.individual_content{
+    height: 60%;
+    width: 70%;
+    float: left;
+    padding-bottom: 5%;
+}
+
+.individual_second_layer{
+    padding: 5%;
+}
+
+#message_div{
+    padding-left: 15%;
+}
+
+#filter_content{
+    width: 40% !important;
+    float: left !important;
+}
+
+#search_content{
+    width: 70% !important;
+    float: left !important;
+}
+
+#filter_div,#search_again_div{
+    text-align: left;
+    padding-bottom: 20px;
+    width: 50%;
+    float: left;
+}
+
+#operation_div,#message_div,#search_result_div{
+    width: 100%;
+    float: left;
+}
+
+.icon_div{
+    width: 12%;
+    float: left;
+    padding: 2%;
+}
+
+.icon_search{
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+#search_list_f{
+    margin: 0px;
+    display: block;
+}
+
+.list_inner_content_div{
+    width: 80%;
+    float: left;
+}
+
+.id_row *{
+    font-size: 25px;
+}
+
+#lei{
+
+    width: 500px;
+    height: 300px;
+"position": "absolute";
+"left": "50%";
+"top": "50%"
+}
+
+
+.table_two_row{
+    max-width: 100%;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.normal_th{
+    color: #742e68;
+    font-size: 15px;
+    padding: 0;
+    font-weight: bold;
+}
