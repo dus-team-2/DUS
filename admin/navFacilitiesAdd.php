@@ -99,14 +99,13 @@ require "dbconfig.php";
 <?php
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO Xdqrs89_SE2_DUS.facility VALUES (
-'" . $_POST['adminFacilitiesAddId'] . "',
-'" . $_POST['adminFacilitiesAddName'] . "',
-'" . $_POST['adminFacilitiesAddDescription'] . "',
-'" . $_POST['adminFacilitiesAddPrice'] . "',
-'" . $_POST['adminFacilitiesAddCapacity'] . "',
-'" . $_POST['adminFacilitiesAddEmail'] . "',
-'" . $_POST['adminFacilitiesAddTel'] . "',
-'" . $_POST['adminFacilitiesAddAddress'] . "'
+'".$_POST['adminFacilitiesAddName']."',
+'".$_POST['adminFacilitiesAddDescription']."',
+'".$_POST['adminFacilitiesAddPrice']."',
+'".$_POST['adminFacilitiesAddCapacity']."',
+'".$_POST['adminFacilitiesAddEmail']."',
+'".$_POST['adminFacilitiesAddTel']."',
+'".$_POST['adminFacilitiesAddAddress']."'
 );";
     $pdo->exec($sql);
     echo "<script>

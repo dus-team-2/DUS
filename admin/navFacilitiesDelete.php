@@ -8,7 +8,8 @@ if($_SESSION["loginStatus"] != 1){
         </script>";
 }
 require "dbconfig.php";
-
+$statement = $pdo->query("SELECT facility.name FROM facility;");
+$row = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="span9">
@@ -17,9 +18,9 @@ require "dbconfig.php";
 
     <!-- Functions to alert if a value is null -->
     <script>
-        function adminFacilitiesDeleteId(){
-            if(document.getElementById("adminFacilitiesDeleteId").value==""){
-                alert("Please enter Facility Id.");
+        function adminFacilitiesDelete(){
+            if(document.getElementById("adminFacilitiesDeleteName").value==""){
+                alert("Please select a facility.");
                 return false;
             }
         }
@@ -29,23 +30,26 @@ require "dbconfig.php";
     <div class = "span9">
         <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesDelete">
             <p>
-                <label for="adminFacilitiesDeleteId">Please input the Facility Id for deleting a facility: </label>
-                <input type="number" name="adminFacilitiesDeleteId" id="adminFacilitiesDeleteId"/>
+                <label for="adminFacilitiesDeleteName">Please select a facility for deleting: </label>
+                <select name="adminFacilitiesDeleteName" id="adminFacilitiesDeleteName"/>
+                <option value="">-- Please select --</option>
+                <option value="<?php echo $row['name'];?>" ><?php echo $row['name'];?></option>
+                </select>
             </p>
             <div class = "button">
-                <input type="submit" onclick="return adminFacilitiesDeleteId();" value="Submit" />
+                <input type="submit" onclick="return adminFacilitiesDelete();" value="Submit" />
             </div>
         </form>
     </div>
 
 <?php
 if($_SERVER["REQUEST_METHOD"] === "POST") {
-    $sql = "DELETE FROM Xdqrs89_SE2_DUS.facility WHERE facility.id = '" . $_POST['adminFacilitiesDeleteId'] . "'";
+    $sql = "DELETE FROM Xdqrs89_SE2_DUS.facility WHERE facility.name = '".$_POST['adminFacilitiesDeleteName']."'";
     $pdo->exec($sql);
 
     echo "<script>
             alert('success!');
-            //window.location = 'facilities.php';
+            window.location = 'facilities.php';
         </script>";
 }
 include "footer.php";
