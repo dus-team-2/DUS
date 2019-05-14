@@ -11,7 +11,6 @@ include "header.php";
 
 <?php
 include "header2.php";
-
 session_start();
 if(!isset($_SESSION["loginStatus"])){
     echo "<script>
@@ -19,13 +18,18 @@ if(!isset($_SESSION["loginStatus"])){
         </script>";
 }
 // require "dbconfig.php";
+
 ?>
-<div>
-    <?php
-    include "side.php";
-    require_once ('../view/profile.php');
-    ?>
-</div>
+
+
+    <div>
+        <?php
+        include "side.php";
+        require_once ('../view/search_result.php');
+        ?>
+    </div>
+
+
 
 
 
