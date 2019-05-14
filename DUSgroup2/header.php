@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0038)https://www.teamdurham.com/facilities/ -->
+<?php session_start();?>
 <html class="no-js" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

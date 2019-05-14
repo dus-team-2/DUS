@@ -89,8 +89,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 
     if(!empty($username) && !empty($password) && !empty($email)){
-        $sql = "INSERT INTO user (username, password, email, is_uni_member, security_question, security_answer)
-                VALUES (:username, :password, :email, :is_uni_member, :security_question, :security_answer)";
+        $sql = "INSERT INTO user (username, password, email, is_uni_member, security_question, security_answer, is_manager)
+                VALUES (:username, :password, :email, :is_uni_member, :security_question, :security_answer, 0)";
         $statement = $pdo -> prepare($sql);
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
         $statement -> bindPARAM(":username", $username, PDO::PARAM_STR);

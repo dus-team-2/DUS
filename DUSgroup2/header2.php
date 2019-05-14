@@ -38,8 +38,13 @@
 		<div id="menu">
 			<ul>
 				<?php
-				session_start();
-				if($_SESSION["loginStatus"] == 2){
+				//session_start();
+				if(empty($_SESSION)){
+					// visitor
+					echo '<li> 
+							<a href="navLoginUser.php">Login/Register</a>
+						</li>';
+				}else if($_SESSION["loginStatus"] == 2){
 					// user
 					echo '<li> 
 							<a href="dbfunction.php?action=logout">Logout</a>
