@@ -24,7 +24,7 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
             if($("#adminFacilitiesDeleteId").val()==""){
                 alert("Please select a facility.");
             }else{
-				alert('success selected');
+				//alert('success selected');
 			}
         }
     </script>
