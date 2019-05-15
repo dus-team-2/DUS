@@ -57,7 +57,7 @@ include "header.php";?>
 								if($event['is_fixed']==1){
 									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
 								}else if($event['space']>0){
-									echo "{ id: '".$event['id']."', title: '".$event['space']." space left', start: '".$start."', end: '".$end."', color: 'green'},";
+									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
 								}
@@ -103,7 +103,7 @@ include "header.php";?>
 								if($event['is_fixed']==1){
 									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
 								}else if($event['space']>0){
-									echo "{ id: '".$event['id']."', title: '".$event['space']." space left', start: '".$start."', end: '".$end."', color: 'green'},";
+									echo "{ id: '".$event['id']."', title: '".$event['space']." room(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
 								}
@@ -149,7 +149,7 @@ include "header.php";?>
 								if($event['is_fixed']==1){
 									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
 								}else if($event['space']>0){
-									echo "{ id: '".$event['id']."', title: '".$event['space']." space left', start: '".$start."', end: '".$end."', color: 'green'},";
+									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
 								}
