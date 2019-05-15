@@ -1,11 +1,16 @@
 <?php
 include "header.php";
+?>
+<link href="../DUSport.css" rel="stylesheet">
+<link href="../areobics.css" rel="stylesheet">
+
+<?php
 include "header2.php";
 
 // require "dbconfig.php";
 
 ?>
-
+<div>
 <div id="content" class="row-fluid">
     <div class="span3 pages">
         <ul>
@@ -16,11 +21,10 @@ include "header2.php";
             <li class="sideways"><a href="https://www.teamdurham.com/about/facilities/durham/contactus/">Contact Us</a></li>
         </ul>
     </div>
-        
-    <div class="span9">
-        <h1>Our Facilities</h1>
-    </div>
 
-
+    <?php
+    require_once ('../index.php');
+    ?>
+</div>
 
 <?php include "footer.php";?>
