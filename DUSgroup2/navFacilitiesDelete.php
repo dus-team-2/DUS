@@ -35,7 +35,7 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
             <p>
                 <label for="adminFacilitiesDeleteId">Please select a facility for deleting: </label>
                 <select name="adminFacilitiesDeleteId" id="adminFacilitiesDeleteId"/>
-                <option value="t">-- Please select --</option>
+                <option value="">-- Please select --</option>
                 <?php foreach($row as $element){
                     echo "<option value='".$element['id']."'>".$element['name']."</option>";
                 }
