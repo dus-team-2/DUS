@@ -53,7 +53,7 @@ require_once ('../controller/search_result.php');
                                     <h5 class='mb-1'>". $facility_result_set[$i]['name'] ."</h5>
                                 </div>
                                 <p class='mb-1'>". $description ."</p>
-                                <small class='text-muted'>Facility ID : ". $facility_result_set[$i]['id'] ."</small>
+                                
                             </div>
                             <div id='id4' style='clear:both'></div>
                         </a>
@@ -82,7 +82,7 @@ require_once ('../controller/search_result.php');
                                             <h5 class='mb-1'>". $event_result_set[$i]['title'] ."</h5>
                                         </div>
                                         <p class='mb-1'>". $description ."</p>
-                                        <small class='text-muted'>Event ID : ". $event_result_set[$i]['id'] ."</small>
+                                        
                                     </div>
                                     <div id='id4' style='clear:both'></div>
                                 </a>

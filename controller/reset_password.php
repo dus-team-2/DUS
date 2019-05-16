@@ -12,5 +12,7 @@ $current_user = $_POST['current_user'];
 $hashPassword = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
 update_password($current_user, $hashPassword);
 
-echo "<script>alert('password successfully reset!');
-window.location.href = '../view/reset_password.php'</script>";
+session_destroy();
+
+echo "<script>alert('password successfully reset! Log in with your new password now !');
+window.location.href = '../DUSgroup2/navLoginUser.php'</script>";

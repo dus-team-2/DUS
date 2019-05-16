@@ -20,8 +20,12 @@ function update_form_check() {
     var check_tel = document.getElementById('update_tel').value;
     var i;
 
-
+    //not stop the form submission if there is no tel input
+    if (check_tel.length === 0){
+        return true;
+    }
     for(i=0; i<check_tel.length; i++){
+
         if(parseFloat(check_tel[i]).toString() == 'NaN'){
             alert('Tel need to be a 11-digits number start with 0, your input is not a number');
             return false;
