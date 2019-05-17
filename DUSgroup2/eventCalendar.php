@@ -1,6 +1,7 @@
 <?php
 require_once("model/booking.php");
 $fixedEvents = get_fixed_events();
+//print_r($fixedEvents);
 
 include "header.php";?>
 
@@ -44,8 +45,14 @@ include "header.php";?>
 						<?php 
 							foreach($fixedEvents as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
 								echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
 							}
 						?>

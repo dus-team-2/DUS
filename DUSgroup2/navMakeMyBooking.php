@@ -1,10 +1,10 @@
 <?php
 	require_once('model/booking.php');
 	
-	$noSpaceSC = get_no_space('Squash courts');
-	$noSpaceAR = get_no_space('Aerobics room');
-	$noSpaceT = get_no_space('Tennis');
-	$noSpaceAT = get_no_space('Athletics track');
+	$noSpaceSC = get_no_space('Squash Courts');
+	$noSpaceAR = get_no_space('Aerobics Room');
+	$noSpaceT = get_no_space('Tennis Courts');
+	$noSpaceAT = get_no_space('Athletics Track');
 	
 include "header.php";?>
 
@@ -44,19 +44,23 @@ include "header.php";?>
 						endTime: '18:00'
 					}],
 					eventClick: function(info) {
-						alert(info.event.id);
-						window.location.href="";
+						//alert(info.event.id);
+						//window.location.href="";
 					},
 					<?php if (!empty($noSpaceSC)){ ?>
 					events: [
 						<?php 
 							foreach($noSpaceSC as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -90,19 +94,23 @@ include "header.php";?>
 						endTime: '18:00'
 					}],
 					eventClick: function(info) {
-						alert(info.event.id);
-						window.location.href="";
+						//alert(info.event.id);
+						//window.location.href="";
 					},
 					<?php if (!empty($noSpaceAR)){ ?>
 					events: [
 						<?php 
 							foreach($noSpaceAR as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." room(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -136,19 +144,23 @@ include "header.php";?>
 						endTime: '18:00'
 					}],
 					eventClick: function(info) {
-						alert(info.event.id);
-						window.location.href="";
+						//alert(info.event.id);
+						//window.location.href="";
 					},
 					<?php if (!empty($noSpaceT)){ ?>
 					events: [
 						<?php 
 							foreach($noSpaceT as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -182,19 +194,23 @@ include "header.php";?>
 						endTime: '18:00'
 					}],
 					eventClick: function(info) {
-						alert(info.event.id);
-						window.location.href="";
+						//alert(info.event.id);
+						//window.location.href="";
 					},
 					<?php if (!empty($noSpaceAT)){ ?>
 					events: [
 						<?php 
 							foreach($noSpaceAT as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." space left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
