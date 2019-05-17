@@ -52,16 +52,28 @@ include "header.php";?>
 						<?php if(!empty($fixedEvents)){
 							foreach($fixedEvents as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
 								echo "{ id: '".$event['id']."', title: '".$event['title']." ".$event['content']."', start: '".$start."', end: '".$end."'},";
 							}
 						}
 						if(!empty($bookings)){
 							foreach($bookings as $event){
 								$endTime = $event['slot']+1;
-								$start = $event['date']."T".$event['slot'].":00:00";
-								$end = $event['date']."T".$endTime.":00:00";
+								if($event['slot']<10){
+									$start = $event['date']."T0".$event['slot'].":00:00";
+								}else{
+								$start = $event['date']."T".$event['slot'].":00:00";}
+								if($endTime<10){
+									$end = $event['date']."T0".$endTime.":00:00";
+								}else{
+								$end = $event['date']."T".$endTime.":00:00";}
 								echo "{ id: '".$event['id']."', title: '".$event['facility']." booked by ".$event['user']."', start: '".$start."', end: '".$end."', color: 'green'},";
 							}
 						}
