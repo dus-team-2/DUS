@@ -36,8 +36,8 @@ include "header.php";?>
 						endTime: '18:00'
 					}],
 					eventClick: function(info) {
-						alert(info.event.id);
-						window.location.href="";
+						//alert(info.event.id);
+						window.location.href="navBookingDetail.php?fid=" + info.event.id;
 					},
 					<?php if (!empty($fixedEvents)){ ?>
 					events: [
