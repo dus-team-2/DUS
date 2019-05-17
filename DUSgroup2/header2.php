@@ -64,7 +64,7 @@
 						</li>
 						
 						<li> 
-							<a class="nav-link" style="width:auto"><i class="fas fa-user"></i> Hi, '.$_SESSION["username"].'</a>
+							<a style="width:auto"><i class="fas fa-user"></i> Hi, '.$_SESSION["username"].'</a>
 						</li>';
 				}elseif($_SESSION["loginStatus"] == 1){
 					// admin
@@ -101,7 +101,7 @@
 						</li>
 					
 						<li>
-							<a class="nav-link" style="width:auto"><i class="fas fa-user"></i> Hi, '.$_SESSION["username"].'</a>
+							<a style="width:auto"><i class="fas fa-user"></i> Hi, '.$_SESSION["username"].'</a>
 						</li>';
 				}else{
 					// visitor
