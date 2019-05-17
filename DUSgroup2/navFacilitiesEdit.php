@@ -17,13 +17,15 @@ $edit = $pdo->query("SELECT * FROM facility WHERE facility.id = '".$_GET['adminF
 $edit_row = $edit->fetch(PDO::FETCH_ASSOC);}
 //print_r($edit_row);
 
+if(isset($_GET["adminFacilitiesEditName"])) {
 //check if the input name has exist
-$check_edit_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='".$_POST['adminFacilitiesEditName']."';");
-$check_edit = $check_edit_stmt->fetchAll(PDO::FETCH_ASSOC);
-if($check_edit[0]['name']){
-    echo "<script>
+    $check_edit_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='" . $_POST['adminFacilitiesEditName'] . "';");
+    $check_edit = $check_edit_stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($check_edit[0]['name']) {
+        echo "<script>
             alert('The name has exist!');
         </script>";
+    }
 }
 ?>
 
@@ -78,6 +80,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
             }
             else if(document.getElementById("adminFacilitiesEditPrice").value<0){
                 alert("The price can not be negative.");
+                return false;
             }
             else if(document.getElementById("adminFacilitiesEditCapacity").value==""){
                 alert("Please enter Facility Capacity.");
@@ -85,6 +88,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
             }
             else if(document.getElementById("adminFacilitiesEditCapacity").value<0){
                 alert("The capacity can not be negative.");
+                return false;
             }
             else if(document.getElementById("adminFacilitiesEditEmail").value==""){
                 alert("Please enter Facility Contact Email.");
@@ -102,7 +106,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
     </script>
 
     <!-- Edit a facility -->
-        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesEdit">
+        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesEdit" enctype="multipart/form-data">
             <p>Please input the information for editing a facility:</p>
             <p>
                 <label for="adminFacilitiesEditName">Facility Name: </label>
@@ -114,8 +118,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 
             <p>
                 <label for="adminFacilitiesEditDescription">Facility Description: </label>
-                <textarea name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" rows="10">
-                       <?php echo $edit_row['description']; ?></textarea>
+                <textarea name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" style="width:300px"><?php echo $edit_row['description']; ?></textarea>
             </p>
 
             <p>
@@ -144,20 +147,26 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 
             <p>
                 <label for="adminFacilitiesEditAddress">Facility Contact Address: </label>
-                <textarea name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" rows="5">
-                       <?php echo $edit_row['contact_address']; ?></textarea>
+                <textarea name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" style="width:300px" ><?php echo $edit_row['contact_address']; ?></textarea>
             </p>
 
+			<p> Original picture: </p>
+			<p><img src="image/<?php echo $edit_row['pic']; ?>" style="width:250pt" /></p>
+			
             <p>
-                <label for="adminFacilitiesEditPic">Choose file</label>
-                <input type="file" name="adminFacilitiesEditPic" id="adminFacilitiesEditPic"
-                       value="<?php echo $edit_row['pic']; ?>"/>
-            </p>
-
+                <label for="adminFacilitiesEditPic">Choose new picture</label>
+                <input type="file" name="adminFacilitiesEditPic" id="adminFacilitiesEditPic" value="<?php echo $edit_row['pic']; ?>"/>
+				<input type='hidden' name='pic1' value="<?php echo $edit_row['pic']; ?>"/>
+			<br>
+			<br>
+			
+			<p> Original picture 2: </p>
+			<p><img src="image/<?php echo $edit_row['pic_2']; ?>" style="width:250pt" /></p>
+			
             <p>
-                <label for="adminFacilitiesEditPic2">Choose file 2</label>
-                <input type="file" name="adminFacilitiesEditPic2" id="adminFacilitiesEditPic2"
-                       value="<?php echo $edit_row['pic2']; ?>"/>
+                <label for="adminFacilitiesEditPic2">Choose new picture 2</label>
+                <input type="file" name="adminFacilitiesEditPic2" id="adminFacilitiesEditPic2" value="<?php echo $edit_row['pic_2']; ?>"/>
+				<input type='hidden' name='pic2' value="<?php echo $edit_row['pic_2']; ?>"/>
             </p>
 
             <div class="button">
@@ -166,10 +175,37 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
             </div>
         </form>
 </div>
+
+    //show file name
+    <script>
+        var imageFile;
+        $("input[name=adminFacilitiesEditPic]").change(function(e){
+            imageFile = e.target.files[0];
+            $(".adminFacilitiesEditPic").html(imageFile.name);
+        })
+
+        var imageFile2;
+        $("input[name=adminFacilitiesEditPic2]").change(function(e){
+            imageFile2 = e.target.files[0];
+            $(".adminFacilitiesEditPic2").html(imageFile2.name);
+        })
+    </script>
+
 <?php
 }
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
+	$tempEmail = "";
+	if(isset($_POST["adminFacilitiesAddEmail"])) {
+	$tempEmail = $_POST['adminFacilitiesAddEmail'];}
+	$checkEmail="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/";
+	if(!preg_match($checkEmail,$tempEmail)){	
+				echo "<script>
+            alert('Invalid email!');
+            window.location = 'navFacilitiesEdit.php';
+        </script>";
+		
+            }else{
     if(!empty($_FILES["adminFacilitiesEditPic"]["name"])){
         $fileName = $_FILES["adminFacilitiesEditPic"]["name"];
         $explodedFileName = explode(".", $fileName);
@@ -178,20 +214,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         move_uploaded_file($_FILES["adminFacilitiesEditPic"]["tmp_name"], $fileStorePath);
         //echo $newFileName;
     }else{
-        $newFileName = null;
+        $newFileName = $_POST['pic1'];
     }
     if(!empty($_FILES["adminFacilitiesEditPic2"]["name"])){
         $fileName2 = $_FILES["adminFacilitiesEditPic2"]["name"];
         $explodedFileName2 = explode(".", $fileName2);
         $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
         $fileStorePath2 = "image/".$newFileName2;
-        move_uploaded_file($_FILES["adminFacilitiesEditPic2"]["tmp_name2"], $fileStorePath2);
+        move_uploaded_file($_FILES["adminFacilitiesEditPic2"]["tmp_name"], $fileStorePath2);
         //echo $newFileName2;
     }else{
-        $newFileName2 = null;
+        $newFileName2 = $_POST['pic2'];
     }
-
-$sql = 'UPDATE Xdqrs89_SE2_DUS.facility SET
+		
+    $sql = 'UPDATE Xdqrs89_SE2_DUS.facility SET
 facility.name="'.$_POST['adminFacilitiesEditName'].'", 
 facility.description="'.$_POST['adminFacilitiesEditDescription'].'", 
 facility.price="'.$_POST['adminFacilitiesEditPrice'].'", 
@@ -213,6 +249,8 @@ else{
             alert('fail!');
             window.location = 'facilities.php';
 </script>";}
-}
+}}
+
+//}
 include "footer.php";
 ?>

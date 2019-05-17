@@ -10,13 +10,15 @@ if($_SESSION["loginStatus"] != 1){
 }
 require "dbconfig.php";
 
+if(isset($_GET["adminFacilitiesAddName"])) {
 //check if the input name has exist
-$check_add_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='".$_POST['adminFacilitiesAddName']."';");
-$check_add = $check_add_stmt->fetchAll(PDO::FETCH_ASSOC);
-if($check_add[0]['name']){
-    echo "<script>
+    $check_add_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='" . $_POST['adminFacilitiesAddName'] . "';");
+    $check_add = $check_add_stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($check_add[0]['name']) {
+        echo "<script>
             alert('The name has exist!');
         </script>";
+    }
 }
 ?>
 
@@ -41,6 +43,7 @@ if($check_add[0]['name']){
             }
             else if(document.getElementById("adminFacilitiesAddPrice").value<0){
                 alert("The price can not be negative.");
+                return false;
             }
             else if(document.getElementById("adminFacilitiesAddCapacity").value==""){
                 alert("Please enter Facility Capacity.");
@@ -48,6 +51,7 @@ if($check_add[0]['name']){
             }
             else if(document.getElementById("adminFacilitiesAddCapacity").value<0){
                 alert("The capacity can not be negative.");
+                return false;
             }
             else if(document.getElementById("adminFacilitiesAddEmail").value==""){
                 alert("Please enter Facility Contact Email.");
@@ -66,7 +70,7 @@ if($check_add[0]['name']){
 
     <!-- Add a facility -->
     <div class = "span9">
-        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd">
+        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd" enctype="multipart/form-data">
             <p>Please input the information for adding a facility:</p>
 
             <p>
@@ -105,12 +109,12 @@ if($check_add[0]['name']){
             </p>
 
             <p>
-                <label for="adminFacilitiesAddPic">Choose file</label>
+                <label for="adminFacilitiesAddPic">Choose picture</label>
                 <input type="file" name="adminFacilitiesAddPic" id="adminFacilitiesAddPic" />
             </p>
 
             <p>
-                <label for="adminFacilitiesAddPic2">Choose file 2</label>
+                <label for="adminFacilitiesAddPic2">Choose picture 2</label>
                 <input type="file" name="adminFacilitiesAddPic2" id="adminFacilitiesAddPic2" />
             </p>
 
@@ -120,6 +124,7 @@ if($check_add[0]['name']){
         </form>
     </div>
 
+    //show file name
     <script>
         var imageFile;
         $("input[name=adminFacilitiesAddPic]").change(function(e){
@@ -136,6 +141,15 @@ if($check_add[0]['name']){
 
 <?php
 if($_SERVER["REQUEST_METHOD"] === "POST") {
+	$tempEmail = $_POST['adminFacilitiesAddEmail'];
+	$checkEmail="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/";
+	if(!preg_match($checkEmail,$tempEmail)){	
+				echo "<script>
+            alert('Invalid email!');
+            window.location = 'navFacilitiesAdd.php';
+        </script>";
+		
+            }else{
     if(!empty($_FILES["adminFacilitiesAddPic"]["name"])){
         $fileName = $_FILES["adminFacilitiesAddPic"]["name"];
         $explodedFileName = explode(".", $fileName);
@@ -151,7 +165,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         $explodedFileName2 = explode(".", $fileName2);
         $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
         $fileStorePath2 = "image/".$newFileName2;
-        move_uploaded_file($_FILES["adminFacilitiesAddPic2"]["tmp_name2"], $fileStorePath2);
+        move_uploaded_file($_FILES["adminFacilitiesAddPic2"]["tmp_name"], $fileStorePath2);
         //echo $newFileName2;
     }else{
         $newFileName2 = null;
@@ -173,6 +187,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             alert('success!');
             window.location = 'facilities.php';
         </script>";
-}
+}}
 include "footer.php";
 ?>
