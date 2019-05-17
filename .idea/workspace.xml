@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a3ed9cf-8e37-470c-be8f-b97b35aa2204" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/header2.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/header2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/in mess/NormalBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/eventCalendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/eventCalendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/model/booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/model/booking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/navAccountBookings.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navAccountBookings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/navBookingsOverallCalendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navBookingsOverallCalendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in mess/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/in mess/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in mess/pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/in mess/pay.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DUSgroup2/eventCalendar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="89" />
+            <state relative-caret-position="600">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -51,7 +57,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DUSgroup2/nav.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="855">
               <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
             </state>
           </provider>
@@ -181,11 +187,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2970000" />
+    <option name="totallyTimeSpent" value="3169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -252,14 +257,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/eventCalendar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="89" />
+        <state relative-caret-position="600">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/nav.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="855">
           <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
         </state>
       </provider>
