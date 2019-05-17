@@ -60,9 +60,7 @@ include "header.php";?>
 									$end = $event['date']."T0".$endTime.":00:00";
 								}else{
 								$end = $event['date']."T".$endTime.":00:00";}
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -112,9 +110,7 @@ include "header.php";?>
 									$end = $event['date']."T0".$endTime.":00:00";
 								}else{
 								$end = $event['date']."T".$endTime.":00:00";}
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." room(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -164,9 +160,7 @@ include "header.php";?>
 									$end = $event['date']."T0".$endTime.":00:00";
 								}else{
 								$end = $event['date']."T".$endTime.":00:00";}
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." court(s) left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
@@ -216,9 +210,7 @@ include "header.php";?>
 									$end = $event['date']."T0".$endTime.":00:00";
 								}else{
 								$end = $event['date']."T".$endTime.":00:00";}
-								if($event['is_fixed']==1){
-									echo "{ id: '".$event['id']."', title: '".$event['title']."', start: '".$start."', end: '".$end."'},";
-								}else if($event['space']>0){
+								if($event['space']>0){
 									echo "{ id: '".$event['id']."', title: '".$event['space']." space left', start: '".$start."', end: '".$end."', color: 'green'},";
 								}else{
 									echo "{ id: '".$event['id']."', title: 'Fully booked', start: '".$start."', end: '".$end."', color: 'red'},";
