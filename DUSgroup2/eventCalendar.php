@@ -38,7 +38,7 @@ include "header.php";?>
 					}],
 					eventClick: function(info) {
 						//alert(info.event.id);
-						window.location.href="navBookingDetail.php?fid=" + info.event.id;
+						window.location.href="navBookingDetail.php?bid=" + info.event.id;
 					},
 					<?php if (!empty($fixedEvents)){ ?>
 					events: [
@@ -88,6 +88,7 @@ include "header2.php";
 
     <div class="span9">
         <h1>Event Calendar</h1>
+        <p>* Click on the events to check details !</p>
 		<div class="main">
 			<div id='calendar'></div>
 		</div>

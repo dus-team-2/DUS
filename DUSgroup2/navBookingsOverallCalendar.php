@@ -45,7 +45,7 @@ include "header.php";?>
 					}],
 					eventClick: function(info) {
 						//alert(info.event.id);
-                        window.location.href="navBookingDetail.php?fid=" + info.event.id;
+                        window.location.href="navBookingDetail.php?bid=" + info.event.id;
 					},
 					<?php if (!empty($fixedEvents)||!empty($bookings)){ ?>
 					events: [
@@ -101,6 +101,7 @@ if($_SESSION["loginStatus"] != 1){
 
 <div class="span9">
     <h1>Overall Calendar</h1>
+    <p>* Click on the bookings to check details !</p>
 	<div id='calendar'></div>
 </div>
 
