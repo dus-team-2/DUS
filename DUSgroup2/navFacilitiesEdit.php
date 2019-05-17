@@ -16,6 +16,15 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 $edit = $pdo->query("SELECT * FROM facility WHERE facility.id = '".$_GET['adminFacilitiesEditSelectId']."';");
 $edit_row = $edit->fetch(PDO::FETCH_ASSOC);}
 //print_r($edit_row);
+
+//check if the input name has exist
+$check_edit_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='".$_POST['adminFacilitiesEditName']."';");
+$check_edit = $check_edit_stmt->fetchAll(PDO::FETCH_ASSOC);
+if($check_edit[0]['name']){
+    echo "<script>
+            alert('The name has exist!');
+        </script>";
+}
 ?>
 
 <div class="span9">
@@ -31,7 +40,7 @@ $edit_row = $edit->fetch(PDO::FETCH_ASSOC);}
         }
     </script>
 
-    <!-- Delete a facility -->
+    <!-- Select a facility -->
         <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="get" id="adminFacilitiesEditSelect">
             <p>
                 <label for="adminFacilitiesEditSelectId">Please select a facility for editing: </label>
@@ -51,6 +60,47 @@ $edit_row = $edit->fetch(PDO::FETCH_ASSOC);}
 <?php
 if(isset($_GET["adminFacilitiesEditSelectId"])) {
     ?>
+
+    <!-- Functions to alert if a value is not acceptable -->
+    <script>
+        function adminFacilitiesEdit(){
+            if(document.getElementById("adminFacilitiesEditName").value==""){
+                alert("Please enter Facility Name.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditDescription").value==""){
+                alert("Please enter Facility Description.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditPrice").value==""){
+                alert("Please enter Facility Price.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditPrice").value<0){
+                alert("The price can not be negative.");
+            }
+            else if(document.getElementById("adminFacilitiesEditCapacity").value==""){
+                alert("Please enter Facility Capacity.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditCapacity").value<0){
+                alert("The capacity can not be negative.");
+            }
+            else if(document.getElementById("adminFacilitiesEditEmail").value==""){
+                alert("Please enter Facility Contact Email.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditTel").value==""){
+                alert("Please enter Facility Contact Tel.");
+                return false;
+            }
+            else if(document.getElementById("adminFacilitiesEditAddress").value==""){
+                alert("Please enter Facility Contact Address.");
+                return false;
+            }
+        }
+    </script>
+
     <!-- Edit a facility -->
         <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesEdit">
             <p>Please input the information for editing a facility:</p>
@@ -64,8 +114,8 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 
             <p>
                 <label for="adminFacilitiesEditDescription">Facility Description: </label>
-                <textarea name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" rows="10"
-                       ><?php echo $edit_row['description']; ?></textarea>
+                <textarea name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" rows="10">
+                       <?php echo $edit_row['description']; ?></textarea>
             </p>
 
             <p>
@@ -94,12 +144,25 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 
             <p>
                 <label for="adminFacilitiesEditAddress">Facility Contact Address: </label>
-                <textarea name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" rows="5"
-                       ><?php echo $edit_row['contact_address']; ?></textarea>
+                <textarea name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" rows="5">
+                       <?php echo $edit_row['contact_address']; ?></textarea>
+            </p>
+
+            <p>
+                <label for="adminFacilitiesEditPic">Choose file</label>
+                <input type="file" name="adminFacilitiesEditPic" id="adminFacilitiesEditPic"
+                       value="<?php echo $edit_row['pic']; ?>"/>
+            </p>
+
+            <p>
+                <label for="adminFacilitiesEditPic2">Choose file 2</label>
+                <input type="file" name="adminFacilitiesEditPic2" id="adminFacilitiesEditPic2"
+                       value="<?php echo $edit_row['pic2']; ?>"/>
             </p>
 
             <div class="button">
                 <input type="submit" onclick="return adminFacilitiesEdit();" value="Submit"/>
+
             </div>
         </form>
 </div>
@@ -107,8 +170,38 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 }
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
+    if(!empty($_FILES["adminFacilitiesEditPic"]["name"])){
+        $fileName = $_FILES["adminFacilitiesEditPic"]["name"];
+        $explodedFileName = explode(".", $fileName);
+        $newFileName = $explodedFileName[0].date("YmdHis").".".$explodedFileName[1];
+        $fileStorePath = "image/".$newFileName;
+        move_uploaded_file($_FILES["adminFacilitiesEditPic"]["tmp_name"], $fileStorePath);
+        //echo $newFileName;
+    }else{
+        $newFileName = null;
+    }
+    if(!empty($_FILES["adminFacilitiesEditPic2"]["name"])){
+        $fileName2 = $_FILES["adminFacilitiesEditPic2"]["name"];
+        $explodedFileName2 = explode(".", $fileName2);
+        $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
+        $fileStorePath2 = "image/".$newFileName2;
+        move_uploaded_file($_FILES["adminFacilitiesEditPic2"]["tmp_name2"], $fileStorePath2);
+        //echo $newFileName2;
+    }else{
+        $newFileName2 = null;
+    }
+
 $sql = 'UPDATE Xdqrs89_SE2_DUS.facility SET
-facility.name="'.$_POST['adminFacilitiesEditName'].'", facility.description="'.$_POST['adminFacilitiesEditDescription'].'", facility.price="'.$_POST['adminFacilitiesEditPrice'].'", facility.capacity="'.$_POST['adminFacilitiesEditCapacity'].'", facility.contact_email="'.$_POST['adminFacilitiesEditEmail'].'", facility.contact_tel="'.$_POST['adminFacilitiesEditTel'].'", facility.contact_address ="'.$_POST['adminFacilitiesEditAddress'].'" WHERE facility.id = "'.$_POST['adminFacilitiesEditId'].'";';
+facility.name="'.$_POST['adminFacilitiesEditName'].'", 
+facility.description="'.$_POST['adminFacilitiesEditDescription'].'", 
+facility.price="'.$_POST['adminFacilitiesEditPrice'].'", 
+facility.capacity="'.$_POST['adminFacilitiesEditCapacity'].'", 
+facility.contact_email="'.$_POST['adminFacilitiesEditEmail'].'", 
+facility.contact_tel="'.$_POST['adminFacilitiesEditTel'].'", 
+facility.contact_address ="'.$_POST['adminFacilitiesEditAddress'].'", 
+facility.pic ="'.$newFileName.'", 
+facility.pic_2 ="'.$newFileName2.'" 
+WHERE facility.id = "'.$_POST['adminFacilitiesEditId'].'";';
 $result = $pdo->exec($sql);
 if($result){
     echo "<script>

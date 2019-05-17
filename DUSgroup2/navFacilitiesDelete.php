@@ -29,7 +29,7 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
         }
     </script>
 
-    <!-- Delete a facility -->
+    <!-- Select a facility -->
     <div class = "span9">
         <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesDelete">
             <p>

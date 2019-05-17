@@ -10,13 +10,21 @@ if($_SESSION["loginStatus"] != 1){
 }
 require "dbconfig.php";
 
+//check if the input name has exist
+$check_add_stmt = $pdo->query("SELECT * FROM facility WHERE facility.name='".$_POST['adminFacilitiesAddName']."';");
+$check_add = $check_add_stmt->fetchAll(PDO::FETCH_ASSOC);
+if($check_add[0]['name']){
+    echo "<script>
+            alert('The name has exist!');
+        </script>";
+}
 ?>
 
 <div class="span9">
     <h1>Add Facilities</h1>
 </div>
 
-    <!-- Functions to alert if a value is null -->
+    <!-- Functions to alert if a value is not acceptable -->
     <script>
         function adminFacilitiesAdd(){
             if(document.getElementById("adminFacilitiesAddName").value==""){
@@ -31,9 +39,15 @@ require "dbconfig.php";
                 alert("Please enter Facility Price.");
                 return false;
             }
+            else if(document.getElementById("adminFacilitiesAddPrice").value<0){
+                alert("The price can not be negative.");
+            }
             else if(document.getElementById("adminFacilitiesAddCapacity").value==""){
                 alert("Please enter Facility Capacity.");
                 return false;
+            }
+            else if(document.getElementById("adminFacilitiesAddCapacity").value<0){
+                alert("The capacity can not be negative.");
             }
             else if(document.getElementById("adminFacilitiesAddEmail").value==""){
                 alert("Please enter Facility Contact Email.");
@@ -90,15 +104,59 @@ require "dbconfig.php";
                 <input type="text" name="adminFacilitiesAddAddress" id="adminFacilitiesAddAddress" />
             </p>
 
+            <p>
+                <label for="adminFacilitiesAddPic">Choose file</label>
+                <input type="file" name="adminFacilitiesAddPic" id="adminFacilitiesAddPic" />
+            </p>
+
+            <p>
+                <label for="adminFacilitiesAddPic2">Choose file 2</label>
+                <input type="file" name="adminFacilitiesAddPic2" id="adminFacilitiesAddPic2" />
+            </p>
+
             <div class = "button">
                 <input type="submit" onclick="return adminFacilitiesAdd();" value="Submit" />
             </div>
         </form>
     </div>
 
+    <script>
+        var imageFile;
+        $("input[name=adminFacilitiesAddPic]").change(function(e){
+            imageFile = e.target.files[0];
+            $(".adminFacilitiesAddPic").html(imageFile.name);
+        })
+
+        var imageFile2;
+        $("input[name=adminFacilitiesAddPic2]").change(function(e){
+            imageFile2 = e.target.files[0];
+            $(".adminFacilitiesAddPic2").html(imageFile2.name);
+        })
+    </script>
 
 <?php
 if($_SERVER["REQUEST_METHOD"] === "POST") {
+    if(!empty($_FILES["adminFacilitiesAddPic"]["name"])){
+        $fileName = $_FILES["adminFacilitiesAddPic"]["name"];
+        $explodedFileName = explode(".", $fileName);
+        $newFileName = $explodedFileName[0].date("YmdHis").".".$explodedFileName[1];
+        $fileStorePath = "image/".$newFileName;
+        move_uploaded_file($_FILES["adminFacilitiesAddPic"]["tmp_name"], $fileStorePath);
+        //echo $newFileName;
+    }else{
+        $newFileName = null;
+    }
+    if(!empty($_FILES["adminFacilitiesAddPic2"]["name"])){
+        $fileName2 = $_FILES["adminFacilitiesAddPic2"]["name"];
+        $explodedFileName2 = explode(".", $fileName2);
+        $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
+        $fileStorePath2 = "image/".$newFileName2;
+        move_uploaded_file($_FILES["adminFacilitiesAddPic2"]["tmp_name2"], $fileStorePath2);
+        //echo $newFileName2;
+    }else{
+        $newFileName2 = null;
+    }
+
     $sql = "INSERT INTO Xdqrs89_SE2_DUS.facility (name, description, price, capacity, contact_email, contact_tel, contact_address, pic, pic_2) VALUES (
 '".$_POST['adminFacilitiesAddName']."',
 '".$_POST['adminFacilitiesAddDescription']."',
@@ -106,7 +164,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 '".$_POST['adminFacilitiesAddCapacity']."',
 '".$_POST['adminFacilitiesAddEmail']."',
 '".$_POST['adminFacilitiesAddTel']."',
-'".$_POST['adminFacilitiesAddAddress']."','',''
+'".$_POST['adminFacilitiesAddAddress']."',
+'".$newFileName."',
+'".$newFileName2."'
 );";
     $pdo->exec($sql);
     echo "<script>
