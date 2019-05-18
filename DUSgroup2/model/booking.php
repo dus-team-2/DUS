@@ -32,4 +32,30 @@
 		$bookings = get_all_data($sql);
 		return $bookings;
 	}
+	
+	function check_space($facilityId, $date, $time){
+		$space = 0;
+		$sql = "SELECT capacity FROM facility WHERE id = '".$facilityId."';";
+		$facility = get_one_data($sql);
+		$sql = "SELECT booking.id AS id FROM booking JOIN booking_timeslot AS t ON t.booking_id = booking.id JOIN booking_facility AS f ON booking.id = f.booking_id WHERE f.facility_id = '".$facilityId."' AND is_fixed = 1 AND t.date = '".$date."' AND t.slot = '".$time."';";
+		$pdo = make_database_connection();
+		$statement = $pdo->query($sql);
+		$result = $statement->rowCount();
+		if($result){
+			$space = 0;
+			
+		}else{
+			$sql = "SELECT COUNT(*) AS booked FROM booking JOIN booking_timeslot AS t ON t.booking_id = booking.id JOIN booking_facility AS f ON booking.id = f.booking_id WHERE f.facility_id = '".$facilityId."' AND is_fixed = 0 GROUP BY date, slot HAVING t.date = '".$date."' AND t.slot = '".$time."';";
+			$pdo = make_database_connection();
+			$statement = $pdo->query($sql);
+			$result = $statement->rowCount();
+			if($result){
+				$result = $statement->fetch(PDO::FETCH_ASSOC);
+				$space = $facility['capacity']-$result['booked'];
+			}else{
+				$space = $facility['capacity'];
+			}
+		}
+		return $space;
+	}
 ?>
