@@ -23,7 +23,7 @@ include "header2.php";
     </div>
 
     <?php
-    require_once ('../index.php');
+    require_once ('../Facilities_Final/index.php');
     ?>
 </div>
 

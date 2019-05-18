@@ -18,7 +18,7 @@ include "header2.php";
         }
         // require "dbconfig.php";
         include "side.php";
-        require_once('../facility_details.php');
+        require_once('../Facilities_Final/facility_details.php');
         ?>
     </div>
 

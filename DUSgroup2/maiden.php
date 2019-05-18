@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 ?>
-<link href="../DUSport.css" rel="stylesheet">
+<link href="../Maiden.css" rel="stylesheet">
 <link href="../areobics.css" rel="stylesheet">
 
 <?php
@@ -23,7 +23,7 @@ include "header2.php";
     </div>
 
     <?php
-    require_once ('../maiden.php');
+    require_once ('../Facilities_Final/maiden.php');
     ?>
 </div>
 
