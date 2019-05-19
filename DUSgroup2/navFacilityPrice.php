@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 ?>
-    <link href="../DUSport.css" rel="stylesheet">
-    <link href="../areobics.css" rel="stylesheet">
+    <link href="../Facilities_Final/DUSport.css" rel="stylesheet">
+    <link href="../Facilities_Final/areobics.css" rel="stylesheet">
 
 <?php
 include "header2.php";
@@ -10,7 +10,7 @@ include "header2.php";
     <div>
         <?php
 
-        session_start();
+        
         if(!isset($_SESSION["loginStatus"])){
             echo "<script>
             window.location = 'navLoginUser.php';

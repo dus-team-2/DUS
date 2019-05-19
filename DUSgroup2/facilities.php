@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 ?>
-<link href="../DUSport.css" rel="stylesheet">
-<link href="../areobics.css" rel="stylesheet">
+<link href="../Facilities_Final/DUSport.css" rel="stylesheet">
+<link href="../Facilities_Final/areobics.css" rel="stylesheet">
 
 <?php
 include "header2.php";
