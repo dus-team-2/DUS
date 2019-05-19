@@ -4,18 +4,21 @@ html, body
 }
 div#space
 {
-   width: 1px;
-   height: 50%;
-   margin-bottom: -517px;
-   float:left
+   /*width: 1px;*/
+   /*height: 50%;*/
+   /*margin-bottom: -517px;*/
+   /*float:left*/
 }
 div#container
 {
+   /*float:right; */
+   /*top: -200px;*/
    width: 1063px;
    height: 1034px;
-   margin: 0 auto;
-   position: relative;
-   float:left
+   /*margin: 0 auto;*/
+   /*position: relative;*/
+   /*float:left*/
+
 }
 body
 {
