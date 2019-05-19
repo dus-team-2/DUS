@@ -25,9 +25,12 @@ require_once ('../controller/booking_detail.php');
                     }else{
                         echo 'Individual Booking';
                     } ?></h2>
+                <h2>ID : <?php echo $current_booking['id'] ?></h2>
+                <button class="btn btn-primary" onclick="window.location.href = '../controller/delete_booking.php?bid=<?php echo $current_booking['id'] ?>'">Delete</button>
+
             </div>
 
-            <h2>ID : <?php echo $current_booking['id'] ?></h2>
+
             <hr/>
 
             <div id="fixed_event_div" style="display: <?php if ($is_fixed){
