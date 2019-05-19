@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 ?>
-    <link href="../Facilities_Final/DUSport.css" rel="stylesheet">
-    <link href="../Facilities_Final/areobics.css" rel="stylesheet">
+    <link href="../DUSport.css" rel="stylesheet">
+    <link href="../areobics.css" rel="stylesheet">
 
 <?php
 include "header2.php";
@@ -17,7 +17,7 @@ include "header2.php";
         }
         // require "dbconfig.php";
         include "side.php";
-        require_once('../Facilities_Final/facility_details.php');
+        require_once('../facility_details.php');
         ?>
     </div>
 
