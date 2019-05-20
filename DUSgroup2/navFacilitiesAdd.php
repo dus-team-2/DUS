@@ -29,15 +29,15 @@ if(isset($_GET["adminFacilitiesAddName"])) {
     <!-- Functions to alert if a value is not acceptable -->
     <script>
         function adminFacilitiesAdd(){
-            if(document.getElementById("adminFacilitiesAddName").value==""){
+            if(document.getElementById("adminFacilitiesAddName").value==""||document.getElementById("adminFacilitiesAddName").value==null){
                 alert("Please enter Facility Name.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddDescription").value==""){
+            else if(document.getElementById("adminFacilitiesAddDescription").value==""||document.getElementById("adminFacilitiesAddDescription").value==null){
                 alert("Please enter Facility Description.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddPrice").value==""){
+            else if(document.getElementById("adminFacilitiesAddPrice").value==""||document.getElementById("adminFacilitiesAddPrice").value==null){
                 alert("Please enter Facility Price.");
                 return false;
             }
@@ -45,7 +45,7 @@ if(isset($_GET["adminFacilitiesAddName"])) {
                 alert("The price can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddCapacity").value==""){
+            else if(document.getElementById("adminFacilitiesAddCapacity").value==""||document.getElementById("adminFacilitiesAddCapacity").value==null){
                 alert("Please enter Facility Capacity.");
                 return false;
             }
@@ -53,15 +53,15 @@ if(isset($_GET["adminFacilitiesAddName"])) {
                 alert("The capacity can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddEmail").value==""){
+            else if(document.getElementById("adminFacilitiesAddEmail").value==""||document.getElementById("adminFacilitiesAddEmail").value==null){
                 alert("Please enter Facility Contact Email.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddTel").value==""){
+            else if(document.getElementById("adminFacilitiesAddTel").value==""||document.getElementById("adminFacilitiesAddTel").value==null){
                 alert("Please enter Facility Contact Tel.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddAddress").value==""){
+            else if(document.getElementById("adminFacilitiesAddAddress").value==""||document.getElementById("adminFacilitiesAddAddress").value==null){
                 alert("Please enter Facility Contact Address.");
                 return false;
             }

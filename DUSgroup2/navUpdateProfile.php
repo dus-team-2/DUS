@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <!-- saved from url=(0038)https://www.teamdurham.com/facilities/ -->
 <html class="no-js" lang="en"><!--<![endif]--><head>
     
@@ -32,7 +33,6 @@
 
     <?php
 include "header2.php";
-session_start();
 if(!isset($_SESSION["loginStatus"])){
     echo "<script>
             window.location = 'navLoginUser.php';
