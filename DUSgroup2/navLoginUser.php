@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["loginStatus"] = 2;
                 // header("location: facilities.php"); //don't know why
-                echo "789";
+                //echo "789";
                 echo "<script>alert('Successfully logged in!');
                     window.location = 'facilities.php';
                     </script>";
