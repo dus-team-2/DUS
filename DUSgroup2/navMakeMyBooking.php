@@ -288,7 +288,7 @@ if(!isset($_SESSION["loginStatus"])){
 				<h1>Athletics track</h1>
 				<div id='calendarAT'></div>
 			</div>
-			<button onclick="navNormalBooking.php"></button>
+			<button onclick="navNormalBooking.php">Book</button>
 </div>
 
 

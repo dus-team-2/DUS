@@ -22,6 +22,8 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$facility= mysqli_fetch_array($result5);
 	$capacity=$facility['capacity'];
 	echo $capacity;
+	$price = $coun * $facility['price'];
+	$_SESSION['total']=$price;
   
   $available = true;
  foreach ($time as $key => $var){
@@ -45,7 +47,7 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	if($a<$capacity){}
 	else{
 	    echo "   <script>
-   setTimeout(function(){window.location.href='NormalBooking.php';},0);
+   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
    alert ('The number has reached the upper limit！');
    </script>";
    $available = false;
