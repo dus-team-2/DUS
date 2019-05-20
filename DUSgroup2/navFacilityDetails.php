@@ -10,11 +10,11 @@ include "header2.php";
     <div>
         <?php
 
-                if(!isset($_SESSION["loginStatus"])){
-            echo "<script>
-            window.location = 'navLoginUser.php';
-        </script>";
-        }
+        //         if(!isset($_SESSION["loginStatus"])){
+        //     echo "<script>
+        //     window.location = 'navLoginUser.php';
+        // </script>";
+        // }
         // require "dbconfig.php";
         include "side.php";
         require_once('facility_details.php');
