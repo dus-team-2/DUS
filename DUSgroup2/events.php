@@ -14,7 +14,6 @@ include "header2.php";
                 <ul >
                     <li><a href="eventService.php">Our Event Service</a></li>
                     <li><a href="eventCalendar.php">Event Calendar</a></li>
-                    <li><a href="eventFeedback.php">Event Feedback</a></li>
                 </ul>
             </li>
             <li class="sideways"><a href="https://www.teamdurham.com/facilities/durham/">Maiden Castle</a></li>
