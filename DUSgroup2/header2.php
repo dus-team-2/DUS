@@ -34,6 +34,18 @@
 			</div>
 		</div>		
 		
+		<div id="menu2">
+			<ul>
+				<?php 
+					echo'<li>
+						<form action="navSearchResult.php" method="post">
+						    <input type="text" id="searchhhh" name="search_content" />
+						    <button type="submit">search</button>
+						</form>
+						</li>';
+				?>
+			</ul>			
+		</div>
 
 		<div id="menu">
 			<ul>
