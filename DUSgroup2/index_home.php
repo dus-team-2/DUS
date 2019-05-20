@@ -51,7 +51,7 @@
 
         </div>
         <div class="four_div">
-            <a href="#"><img src="images/Other-Facilities.jpg" id="other_ficilities" alt="" class="facility_imgs"></a>
+            <a href="otherFacilitiesList.php"><img src="images/Other-Facilities.jpg" id="other_ficilities" alt="" class="facility_imgs"></a>
 
         </div>
         <div class="four_div">
