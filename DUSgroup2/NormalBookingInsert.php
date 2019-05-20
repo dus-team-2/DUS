@@ -14,8 +14,8 @@ include "side.php";
 //session_start();
 include "config.php";
 //fake!!!!!!!
-  //$user_id=$_SESSION['id'];
-	$user_id=2;
+  $user_id=$_SESSION['id'];
+	//$user_id=2;
   $facility=$_POST['facility'];
   //echo "</br>";
   $date=$_POST['date'];
