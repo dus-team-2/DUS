@@ -265,7 +265,7 @@ if(!isset($_SESSION["loginStatus"])){
 ?>
 
 <div class="span9">
-    <h1>Make a Booking</h1>
+    <h1>Facilities availability</h1>
 	<div>
 				<button id='sc' value='Squash courts'>Squash courts</button>
 				<button id='ar' value='Aerobics room'>Aerobics room</button>
