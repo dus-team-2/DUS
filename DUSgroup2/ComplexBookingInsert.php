@@ -14,7 +14,7 @@ include "config.php";
   //print_r($facility);
   $date=$_POST['date'];
   $time=$_POST['time'];
-  
+  $price=0;
   //$coun=count($facility);
 
  $available = true;
@@ -63,7 +63,9 @@ include "config.php";
 						$result = true;
 						foreach ($facility as $key => $var){
 							$sql = "INSERT INTO booking_facility(booking_id,facility_id) VALUES ('$oid','$var');";
-
+							$result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$var';");
+							$row5= mysqli_fetch_array($result5);
+							$price += $row5['price'];
 							if (mysqli_query($conn,$sql)) {}else{
 								$result = false;
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -71,9 +73,9 @@ include "config.php";
 						}
 						if($result){
 							echo "   <script>
-                            setTimeout(function(){window.location.href='navBookingsAddIndividual.php'},0);
+                            setTimeout(function(){window.location.href='ComplexBookingEmail.php'},0);
 							alert ('Book successfully!');
-                    </script>";//change location to email
+                    </script>";
 						}
 					}else {
 						echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -88,7 +90,8 @@ include "config.php";
     //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 	
-	
+	$_SESSION['totalComplex'] = $price;
+	$_SESSION['uid'] = $user_id;
 	
 	
 	 
