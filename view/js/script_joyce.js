@@ -85,6 +85,18 @@ function new_password_check() {
     }
 
 }
+$(document).ready(function () {
+    $("#booking_select_facility").change(function () {
+        var current_facility = document.getElementById("booking_select_facility").value;
+        if(current_facility == '12344571'){
+            document.getElementById("booking_input_user").style = "display : block";
+
+        }else {
+            document.getElementById("booking_input_user").style = "display : none";
+        }
+    })
+})
+
 
 
 

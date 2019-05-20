@@ -5,18 +5,22 @@ include "header.php";
 include "header2.php";
 include "side.php";
 //session_start();
-if(!isset($_SESSION["loginStatus"])){
+
+/*if(!isset($_SESSION["loginStatus"])){
     echo "<script>
             window.location = 'navLoginUser.php';
         </script>";
-}
+}*/
 //session_start();
 include "config.php";
-  $user_id=$_SESSION['id'];
+//fake!!!!!!!
+  //$user_id=$_SESSION['id'];
+	$user_id=2;
   $facility=$_POST['facility'];
   //echo "</br>";
   $date=$_POST['date'];
   $time=$_POST['time'];
+  $user_ids = $_POST['user_ids'];
   $coun=count($time);
 $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$facility= mysqli_fetch_array($result5);
@@ -60,14 +64,29 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$oid = mysqli_insert_id($conn);
 	$sql = "INSERT INTO booking_facility(booking_id,facility_id) VALUES ('$oid','".$facility['id']."');";
 	if (mysqli_query($conn,$sql)) {
+		$result=true;
+
 		$sql = "INSERT INTO user_booking(user_id,booking_id) VALUES ('$user_id','$oid')";
-		if (mysqli_query($conn,$sql)) {
+			if (mysqli_query($conn,$sql)) {}else{
+				$result=false;
+			}
+		if (!empty($user_ids)){
+			foreach ($user_ids as $id){
+				$sql = "INSERT INTO user_booking(user_id,booking_id) VALUES ('$id','$oid')";
+				if (mysqli_query($conn,$sql)) {}else{
+					$result=false;
+					break;
+				}
+			}
+		}
+
+		if ($result) {
 			$result = true;
 			foreach ($time as $key => $var){
 	$sql = "INSERT INTO booking_timeslot(booking_id,date,slot) VALUES ('$oid','$date','$var');";
 
 			if (mysqli_query($conn,$sql)) {
-		
+
 			} else {
 				$result = false;
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -83,7 +102,7 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	} else {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
-		 
+
 } else {
     //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

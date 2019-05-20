@@ -66,15 +66,15 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
     <!-- Functions to alert if a value is not acceptable -->
     <script>
         function adminFacilitiesEdit(){
-            if(document.getElementById("adminFacilitiesEditName").value==""||document.getElementById("adminFacilitiesEditName").value==null){
+            if(document.getElementById("adminFacilitiesEditName").value==""||document.getElementById("adminFacilitiesEditName").value.match(/^\s+$/g)){
                 alert("Please enter Facility Name.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditDescription").value==""||document.getElementById("adminFacilitiesEditDescription").value==null){
+            else if(document.getElementById("adminFacilitiesEditDescription").value==""||document.getElementById("adminFacilitiesEditDescription").value.match(/^\s+$/g)){
                 alert("Please enter Facility Description.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditPrice").value==""||document.getElementById("adminFacilitiesEditPrice").value==null){
+            else if(document.getElementById("adminFacilitiesEditPrice").value==""||document.getElementById("adminFacilitiesEditPrice").value==.match(/^\s+$/g)){
                 alert("Please enter Facility Price.");
                 return false;
             }
@@ -82,7 +82,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
                 alert("The price can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditCapacity").value==""||document.getElementById("adminFacilitiesEditCapacity").value==null){
+            else if(document.getElementById("adminFacilitiesEditCapacity").value==""||document.getElementById("adminFacilitiesEditCapacity").value.match(/^\s+$/g)){
                 alert("Please enter Facility Capacity.");
                 return false;
             }
@@ -90,15 +90,15 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
                 alert("The capacity can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditEmail").value==""||document.getElementById("adminFacilitiesEditEmail").value==null){
+            else if(document.getElementById("adminFacilitiesEditEmail").value==""||document.getElementById("adminFacilitiesEditEmail").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Email.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditTel").value==""||document.getElementById("adminFacilitiesEditTel").value==null){
+            else if(document.getElementById("adminFacilitiesEditTel").value==""||document.getElementById("adminFacilitiesEditTel").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Tel.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesEditAddress").value==""||document.getElementById("adminFacilitiesEditAddress").value==null){
+            else if(document.getElementById("adminFacilitiesEditAddress").value==""||document.getElementById("adminFacilitiesEditAddress").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Address.");
                 return false;
             }
