@@ -34,18 +34,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if(password_verify($password, $dbhashPassword) && $data["is_manager"] == 0){
                 //比對成功
-                session_start();
+                // session_start();
                 $_SESSION["username"] = $username;
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["loginStatus"] = 2;
                 // header("location: facilities.php"); //don't know why
-                echo "789";
+                // echo "789";
                 echo "<script>alert('Successfully logged in!');
                     window.location = 'facilities.php';
                     </script>";
 
             }elseif(password_verify($password, $dbhashPassword) && $data["is_manager"] == 1){
-                session_start();
+                // session_start();
                 $_SESSION["username"] = $username;
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["loginStatus"] = 1;
