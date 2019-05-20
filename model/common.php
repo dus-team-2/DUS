@@ -89,7 +89,7 @@
     }
 
     function search_by_from_with_filter($table, $by_item1, $by_item2,  $content, $filter_by, $filter_content){
-        $whole_table = get_some_by_filter('booking', $filter_by, $filter_content);
+        $whole_table = get_some_by_filter($table, $filter_by, $filter_content);
         $result = array();
         for ($i=0; $i<count($whole_table); $i++){
             if(strpos($whole_table[$i][$by_item1], $content)!== false || strpos($whole_table[$i][$by_item2], $content)!== false){
@@ -99,3 +99,15 @@
         return $result;
     }
 
+    function delete_from_by($table, $by, $value){
+        $pdo = new PDO('mysql:host=myeusql.dur.ac.uk;dbname=Xdqrs89_SE2_DUS', 'dqrs89', 'dqrs89ru34nner');
+        $statement = $pdo->query("DELETE FROM " . $table . " WHERE ". $by ."='" . $value . "'");
+        $statement->fetch(PDO::FETCH_ASSOC);
+        $statement = $pdo->query("SELECT * FROM " . $table . " WHERE ". $by ."='" . $value . "'");
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            return false;
+        } else {
+            return true;
+        }
+    }
