@@ -14,14 +14,16 @@ if(!isset($_SESSION["loginStatus"])){
 include "config.php";
   $user_id=$_SESSION['id'];
   $facility=$_POST['facility'];
-  echo "</br>";
+  //echo "</br>";
   $date=$_POST['date'];
   $time=$_POST['time'];
   $coun=count($time);
 $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$facility= mysqli_fetch_array($result5);
 	$capacity=$facility['capacity'];
-	echo $capacity;
+	//echo $capacity;
+	$price = $coun * $facility['price'];
+	$_SESSION['total']=$price;
   
   $available = true;
  foreach ($time as $key => $var){
@@ -41,11 +43,11 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 }
     
 	//echo "<br>";
-	echo $a;
+	//echo $a;
 	if($a<$capacity){}
 	else{
 	    echo "   <script>
-   setTimeout(function(){window.location.href='NormalBooking.php';},0);
+   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
    alert ('The number has reached the upper limit！');
    </script>";
    $available = false;

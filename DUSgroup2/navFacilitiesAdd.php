@@ -29,15 +29,15 @@ if(isset($_GET["adminFacilitiesAddName"])) {
     <!-- Functions to alert if a value is not acceptable -->
     <script>
         function adminFacilitiesAdd(){
-            if(document.getElementById("adminFacilitiesAddName").value==""||document.getElementById("adminFacilitiesAddName").value==null){
+            if(document.getElementById("adminFacilitiesAddName").value==""||document.getElementById("adminFacilitiesAddName").value.match(/^\s+$/g)){
                 alert("Please enter Facility Name.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddDescription").value==""||document.getElementById("adminFacilitiesAddDescription").value==null){
+            else if(document.getElementById("adminFacilitiesAddDescription").value==""||document.getElementById("adminFacilitiesAddDescription").value.match(/^\s+$/g)){
                 alert("Please enter Facility Description.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddPrice").value==""||document.getElementById("adminFacilitiesAddPrice").value==null){
+            else if(document.getElementById("adminFacilitiesAddPrice").value==""||document.getElementById("adminFacilitiesAddPrice").value.match(/^\s+$/g)){
                 alert("Please enter Facility Price.");
                 return false;
             }
@@ -45,7 +45,7 @@ if(isset($_GET["adminFacilitiesAddName"])) {
                 alert("The price can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddCapacity").value==""||document.getElementById("adminFacilitiesAddCapacity").value==null){
+            else if(document.getElementById("adminFacilitiesAddCapacity").value==""||document.getElementById("adminFacilitiesAddCapacity").value.match(/^\s+$/g)){
                 alert("Please enter Facility Capacity.");
                 return false;
             }
@@ -53,15 +53,15 @@ if(isset($_GET["adminFacilitiesAddName"])) {
                 alert("The capacity can not be negative.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddEmail").value==""||document.getElementById("adminFacilitiesAddEmail").value==null){
+            else if(document.getElementById("adminFacilitiesAddEmail").value==""||document.getElementById("adminFacilitiesAddEmail").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Email.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddTel").value==""||document.getElementById("adminFacilitiesAddTel").value==null){
+            else if(document.getElementById("adminFacilitiesAddTel").value==""||document.getElementById("adminFacilitiesAddTel").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Tel.");
                 return false;
             }
-            else if(document.getElementById("adminFacilitiesAddAddress").value==""||document.getElementById("adminFacilitiesAddAddress").value==null){
+            else if(document.getElementById("adminFacilitiesAddAddress").value==""||document.getElementById("adminFacilitiesAddAddress").value.match(/^\s+$/g)){
                 alert("Please enter Facility Contact Address.");
                 return false;
             }
@@ -70,7 +70,7 @@ if(isset($_GET["adminFacilitiesAddName"])) {
 
     <!-- Add a facility -->
     <div class = "span9">
-        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd" enctype="multipart/form-data">
+        <form  name = "Form" action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd" enctype="multipart/form-data">
             <p>Please input the information for adding a facility:</p>
 
             <p>
