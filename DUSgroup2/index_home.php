@@ -51,7 +51,7 @@
 
         </div>
         <div class="four_div">
-            <a href="./navFacilityDetails.php?fid=12344569"><img src="images/Tennis.jpg" id="tennis" alt="" class="facility_imgs"></a>
+            <a href="#"><img src="images/Other-Facilities.jpg" id="other_ficilities" alt="" class="facility_imgs"></a>
 
         </div>
         <div class="four_div">
