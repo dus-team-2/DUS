@@ -7,7 +7,7 @@
 
 <body>
 <?php
-session_start();
+//session_start();
 include "model/booking.php";
 //$user= '1';
 //$_SESSION['id'];

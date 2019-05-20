@@ -3,7 +3,7 @@ include "header.php";
 
 include "header2.php";
 include "side.php";
-session_start();
+//session_start();
 if($_SESSION["loginStatus"] != 1){
     echo "<script>
             window.location = 'navLoginUser.php';
