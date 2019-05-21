@@ -61,7 +61,7 @@ if($_SESSION["loginStatus"] != 1){
         $mail->send();
         echo 'Email sent successfully';
 		echo "   <script>
-   setTimeout(function(){window.location.href='navBookingsAddIndividual.php';},0);
+   setTimeout(function(){window.location.href='navBookingsOverallCalendar.php';},0);
    
 			</script>";
     } catch (Exception $e) {

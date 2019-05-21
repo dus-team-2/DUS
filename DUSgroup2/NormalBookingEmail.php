@@ -66,7 +66,7 @@ if(!isset($_SESSION["loginStatus"])){
         $mail->send();
         echo 'Success';
 		echo "   <script>
-   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
+   setTimeout(function(){window.location.href='navAccountBookings.php';},0);
    
 			</script>";}
      catch (Exception $e) {

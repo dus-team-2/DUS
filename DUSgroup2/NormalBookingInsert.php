@@ -20,7 +20,9 @@ include "config.php";
   //echo "</br>";
   $date=$_POST['date'];
   $time=$_POST['time'];
-  $user_ids = $_POST['user_ids'];
+  if(isset($_POST['user_ids'])){
+	  $user_ids = $_POST['user_ids'];
+  }
   $coun=count($time);
 $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$facility= mysqli_fetch_array($result5);
