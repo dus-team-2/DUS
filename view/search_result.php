@@ -46,7 +46,7 @@ require_once ('../controller/search_result.php');
                         }
                         echo "
                     <div>
-                        <a href='#' class='list-group-item list-group-item-action'>
+                        <a href='navFacilityDetails.php?fid=".$facility_result_set[$i]['id']."' class='list-group-item list-group-item-action'>
                             <div class='icon_div'><img src='../view/image/icon_F.png' class='icon_search'></div>
                             <div class='list_inner_content_div'>
                                 <div class='d-flex w-100 justify-content-between'>

@@ -37,7 +37,7 @@ unset($pdo);
                 
                 <td><?php echo $row["id"]?></td>
                 <td>
-                    <a href="otherFacilitiesDetails.php?action=otherFacilitiesDetails&name=<?php echo $row["name"]?>" class="right">                           
+                    <a href="navFacilityDetails.php?fid=<?php echo $row["id"]?>" class="right">
                     <?php echo $row["name"]?>
                     </a>
                 </td>
