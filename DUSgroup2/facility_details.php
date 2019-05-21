@@ -59,6 +59,9 @@ $conn->close();
 
     <div id="wb_txtaerodetails" style="width:100%;">
         <span style="color:#4F4F4F;font-family:Verdana;font-size:13px;line-height:24px;"><?php echo $FacilityDescription ?></span></div>
+		
+		 <div id="wb_txtaeroprice" style="width:100%;">
+          <span style="color:#4F4F4F;font-family:Arial;font-size:13px;line-height:24px;"><strong> <?php echo $FacilityName?> Price per hour  £<?php echo $FacilityPrice ?> </span></div>
     <div id="wb_txtaerocontactadd" style="width:100%;">
         <span style="color:#4F4F4F;font-family:Verdana;font-size:13px;line-height:24px;"> <strong>Contact: </strong><br> <?php echo $FacilityContactEmail ?><br><strong><?php echo $FacilityContactAdd ?></strong> <br>  Tel:<?php echo $FacilityContactTel ?></span></div>
     <div id="facility_detail_image_div" >
