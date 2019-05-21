@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="../view/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../view/css/bootstrap-grid.css">
+<link rel="stylesheet" type="text/css" href="../view/css/bootstrap-reboot.css">
+<link rel="stylesheet" type="text/css" href="../view/css/css_joyce.css">
 </head>
 <body class="home">
 	<div class="container-fluid">
@@ -37,10 +41,16 @@
 		<div id="menu2">
 			<ul>
 				<?php 
-					echo'<li>
+					echo'<li></li><li>
 						<form action="navSearchResult.php" method="post">
-						    <input type="text" id="searchhhh" name="search_content" />
-						    <button type="submit">search</button>
+						<div style="padding-right: 15%">
+						    <div style="width: 70%; float: left">
+						        <input type="text" class="form-control" id="searchhhh" name="search_content"  />
+						    </div>
+						    <div style="width: 25%;float: left; padding-left: 3%">
+						        <button type="submit" class="btn btn-primary" >search</button>
+						    </div>
+						 </div>
 						</form>
 						</li>';
 				?>

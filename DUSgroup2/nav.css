@@ -167,7 +167,6 @@
 #menu2 {
 	/* 選單大小 */
 	width:100%;
-	height:30px;
 }
 #menu2 ul {
 	/* 取消ul樣式符號 */
@@ -196,7 +195,6 @@
 	/* 這邊也要設float，否則IE6會以100%寬度顯示 */
 	float:left;
 	/* 固定高度 */
-	height:30px;
 	width: 100px;
 	text-align: center;
 }

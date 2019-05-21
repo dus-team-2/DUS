@@ -171,3 +171,10 @@
     padding: 0;
     font-weight: bold;
 }
+
+.small_inside_row{
+    width: 20%;
+    float: left;
+    padding-left: 2%;
+    padding-right: 2%;
+}
