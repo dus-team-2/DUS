@@ -55,11 +55,11 @@ if($_SESSION["loginStatus"] != 1){
         //Content
         $mail->isHTML(true);
         $mail->Subject = 'Booking Bill' . time();
-        $mail->Body    = "<h1>"."Hi, ".$user."  <br/>        ".". Your booking is done and you need to pay "."$total"." pounds.</h1>" . date('Y-m-d H:i:s');
+        $mail->Body    = "<h1>"."Hi, ".$user."  <br/>        "." Your booking is done and you need to pay "."$total"." pounds.</h1>" . date('Y-m-d H:i:s');
         $mail->AltBody = 'the brower does not support';
 
         $mail->send();
-        echo 'Email sent successfully';
+        // echo 'Email sent successfully';
 		echo "   <script>
    setTimeout(function(){window.location.href='navBookingsOverallCalendar.php';},0);
    
