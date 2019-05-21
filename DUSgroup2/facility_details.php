@@ -63,9 +63,9 @@ $conn->close();
         <span style="color:#4F4F4F;font-family:Verdana;font-size:13px;line-height:24px;"> <strong>Contact: </strong><br> <?php echo $FacilityContactEmail ?><br><strong><?php echo $FacilityContactAdd ?></strong> <br>  Tel:<?php echo $FacilityContactTel ?></span></div>
     <div id="facility_detail_image_div" >
         <div id="wb_aerobics1" style="float: left;">
-            <img src= <?php echo $FacilityFirstPic?> id="aerobics1" alt="" style="height:180pt;" /></div>
+            <img src= <?php echo trim($FacilityFirstPic)?> id="aerobics1" alt="" style="height:180pt;" /></div>
         <div id="wb_aerobics2" style="float: left;">
-            <img src=<?php echo $FacilitySecondPic?> id="aerobics2" alt="" style="height:180pt;" /></div>
+            <img src=<?php echo trim($FacilitySecondPic)?> id="aerobics2" alt="" style="height:180pt;" /></div>
     </div>
 </div>
 
