@@ -34,7 +34,8 @@ include "config.php";
             ?>
         </select></p>
         <p><div style="margin-top:20px;">
-			<p>Date:<input id='date' name="date" type="text" value=''/></p>
+			<p>Date:<input id='date' name="date" type="text" value=''/>
+			<br>note for date: choose several dates if needed </p>
 
             time:<select name="time[]" multiple="true">
                 <option value="8">8:00-9:00</option>
