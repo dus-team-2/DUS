@@ -1,7 +1,16 @@
 <?php
 	require_once('model/booking.php');
 	
-include "header.php";?>
+include "header.php";
+//session_start();
+if(!isset($_SESSION["loginStatus"])){
+    echo "<script>
+            window.location = 'navLoginUser.php';
+        </script>";
+}
+// require "dbconfig.php";
+	$bookings = get_bookings_by_userid($_SESSION['id']);
+?>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.css">
 		<link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid/main.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/@fullcalendar/timegrid/main.min.css">
@@ -69,14 +78,7 @@ include "header.php";?>
 		<?php
 include "header2.php";
 include "side.php";
-//session_start();
-if(!isset($_SESSION["loginStatus"])){
-    echo "<script>
-            window.location = 'navLoginUser.php';
-        </script>";
-}
-// require "dbconfig.php";
-	$bookings = get_bookings_by_userid($_SESSION['id']);
+
 ?>
 
 <div class="span9">
