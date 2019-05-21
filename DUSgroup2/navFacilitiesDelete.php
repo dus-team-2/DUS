@@ -24,7 +24,12 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
             if($("#adminFacilitiesDeleteId").val()==""){
                 alert("Please select a facility.");
             }else{
-				//alert('success selected');
+                var r=confirm("Are you sure to delete this facility?")
+                if(r==false){
+                    return false;
+                }else{
+
+                }
 			}
         }
     </script>
@@ -54,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $pdo->exec($sql);
 
     echo "<script>
-            alert('success!');
+            alert('Success!');
             window.location = 'facilities.php';
         </script>";
 }
