@@ -61,11 +61,11 @@ $conn->close();
         <span style="color:#4F4F4F;font-family:Verdana;font-size:13px;line-height:24px;"><?php echo $FacilityDescription ?></span></div>
     <div id="wb_txtaerocontactadd" style="width:100%;">
         <span style="color:#4F4F4F;font-family:Verdana;font-size:13px;line-height:24px;"> <strong>Contact: </strong><br> <?php echo $FacilityContactEmail ?><br><strong><?php echo $FacilityContactAdd ?></strong> <br>  Tel:<?php echo $FacilityContactTel ?></span></div>
-    <div id="facility_detail_image_div" style="width:100%;">
-        <div id="wb_aerobics1" style="width:50%; float: left">
-            <img src= <?php echo $FacilityFirstPic?> id="aerobics1" alt=""></div>
-        <div id="wb_aerobics2" style="width:50%; float: left;">
-            <img src=<?php echo $FacilitySecondPic?> id="aerobics2" alt=""></div>
+    <div id="facility_detail_image_div" >
+        <div id="wb_aerobics1" style="float: left;">
+            <img src= <?php echo $FacilityFirstPic?> id="aerobics1" alt="" style="height:180pt;" /></div>
+        <div id="wb_aerobics2" style="float: left;">
+            <img src=<?php echo $FacilitySecondPic?> id="aerobics2" alt="" style="height:180pt;" /></div>
     </div>
 </div>
 

@@ -123,13 +123,13 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 
             <p>
                 <label for="adminFacilitiesEditPrice">Facility Price: </label>
-                <input type="number" name="adminFacilitiesEditPrice" id="adminFacilitiesEditPrice"
+                <input type="number" name="adminFacilitiesEditPrice" id="adminFacilitiesEditPrice" min="0" 
                        value="<?php echo $edit_row['price']; ?>"/>
             </p>
 
             <p>
                 <label for="adminFacilitiesEditCapacity">Facility Capacity: </label>
-                <input type="number" name="adminFacilitiesEditCapacity" id="adminFacilitiesEditCapacity"
+                <input type="number" name="adminFacilitiesEditCapacity" id="adminFacilitiesEditCapacity" min="0" 
                        value="<?php echo $edit_row['capacity']; ?>"/>
             </p>
 
@@ -151,7 +151,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
             </p>
 
 			<p> Original picture: </p>
-			<p><img src="image/<?php echo $edit_row['pic']; ?>" style="width:250pt" /></p>
+			<p><img src="<?php echo $edit_row['pic']; ?>" style="width:250pt" /></p>
 			
             <p>
                 <label for="adminFacilitiesEditPic">Choose new picture</label>
@@ -161,7 +161,7 @@ if(isset($_GET["adminFacilitiesEditSelectId"])) {
 			<br>
 			
 			<p> Original picture 2: </p>
-			<p><img src="image/<?php echo $edit_row['pic_2']; ?>" style="width:250pt" /></p>
+			<p><img src="<?php echo $edit_row['pic_2']; ?>" style="width:250pt" /></p>
 			
             <p>
                 <label for="adminFacilitiesEditPic2">Choose new picture 2</label>
@@ -208,9 +208,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             }else{
     if(!empty($_FILES["adminFacilitiesEditPic"]["name"])){
         $fileName = $_FILES["adminFacilitiesEditPic"]["name"];
-        $explodedFileName = explode(".", $fileName);
-        $newFileName = $explodedFileName[0].date("YmdHis").".".$explodedFileName[1];
-        $fileStorePath = "image/".$newFileName;
+        //$explodedFileName = explode(".", $fileName);
+        //$newFileName = $explodedFileName[0].date("YmdHis").".".$explodedFileName[1];
+		$newFileName = "image/".$fileName;
+        $fileStorePath = $newFileName;
         move_uploaded_file($_FILES["adminFacilitiesEditPic"]["tmp_name"], $fileStorePath);
         //echo $newFileName;
     }else{
@@ -218,9 +219,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     if(!empty($_FILES["adminFacilitiesEditPic2"]["name"])){
         $fileName2 = $_FILES["adminFacilitiesEditPic2"]["name"];
-        $explodedFileName2 = explode(".", $fileName2);
-        $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
-        $fileStorePath2 = "image/".$newFileName2;
+        //$explodedFileName2 = explode(".", $fileName2);
+        //$newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
+        $newFileName2 = "image/".$fileName2;
+        $fileStorePath2 = $newFileName2;
         move_uploaded_file($_FILES["adminFacilitiesEditPic2"]["tmp_name"], $fileStorePath2);
         //echo $newFileName2;
     }else{

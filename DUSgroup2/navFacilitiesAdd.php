@@ -85,12 +85,12 @@ if(isset($_GET["adminFacilitiesAddName"])) {
 
             <p>
                 <label for="adminFacilitiesAddPrice">Facility Price: </label>
-                <input type="number" name="adminFacilitiesAddPrice" id="adminFacilitiesAddPrice" />
+                <input type="number" name="adminFacilitiesAddPrice" id="adminFacilitiesAddPrice" min="0" />
             </p>
 
             <p>
                 <label for="adminFacilitiesAddCapacity">Facility Capacity: </label>
-                <input type="number" name="adminFacilitiesAddCapacity" id="adminFacilitiesAddCapacity" />
+                <input type="number" name="adminFacilitiesAddCapacity" id="adminFacilitiesAddCapacity" min="0" />
             </p>
 
             <p>
@@ -152,9 +152,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             }else{
     if(!empty($_FILES["adminFacilitiesAddPic"]["name"])){
         $fileName = $_FILES["adminFacilitiesAddPic"]["name"];
-        $explodedFileName = explode(".", $fileName);
-        $newFileName = $explodedFileName[0].date("YmdHis").".".$explodedFileName[1];
-        $fileStorePath = "image/".$newFileName;
+        //$explodedFileName = explode(".", $fileName);
+        //$newFileName = $fileName[0].date("YmdHis").".".$explodedFileName[1];
+		$newFileName = "image/".$fileName;
+        $fileStorePath = $newFileName;
         move_uploaded_file($_FILES["adminFacilitiesAddPic"]["tmp_name"], $fileStorePath);
         //echo $newFileName;
     }else{
@@ -162,9 +163,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     if(!empty($_FILES["adminFacilitiesAddPic2"]["name"])){
         $fileName2 = $_FILES["adminFacilitiesAddPic2"]["name"];
-        $explodedFileName2 = explode(".", $fileName2);
-        $newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
-        $fileStorePath2 = "image/".$newFileName2;
+        //$explodedFileName2 = explode(".", $fileName2);
+        //$newFileName2 = $explodedFileName2[0].date("YmdHis").".".$explodedFileName2[1];
+        $newFileName2 = "image/".$fileName2;
+        $fileStorePath2 = $newFileName2;
         move_uploaded_file($_FILES["adminFacilitiesAddPic2"]["tmp_name"], $fileStorePath2);
         //echo $newFileName2;
     }else{
