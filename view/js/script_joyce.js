@@ -85,6 +85,11 @@ function new_password_check() {
     }
 
 }
+
+function link_to_facility(fid){
+    window.location.href="navFacilityDetail.php?fid=" + fid;
+}
+
 $(document).ready(function () {
     $("#booking_select_facility").change(function () {
         var current_facility = document.getElementById("booking_select_facility").value;

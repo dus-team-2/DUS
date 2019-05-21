@@ -1,6 +1,7 @@
 <?php
 include "header.php";
 ?>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="../view/js/bootstrap.bundle.js"></script>
     <script src="../view/js/bootstrap.js"></script>
     <script src="../view/js/script_joyce.js"></script>

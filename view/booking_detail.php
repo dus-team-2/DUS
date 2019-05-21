@@ -79,7 +79,7 @@ require_once ('../controller/booking_detail.php');
                         <tr>
                             <th scope="row">Place/Facility: </th>
                             <td><?php echo $related_facilities[0]['name'] ?></td>
-                            <td> <button class="btn btn-primary" onclick="window.location.href = '#';">View</button></td>
+                            <td> <button class="btn btn-primary" onclick="window.location.href = 'navFacilityDetails.php?fid=<?php $related_facilities[0]['id'] ?>';">View</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -144,11 +144,11 @@ require_once ('../controller/booking_detail.php');
                             <tbody>
                             <?php
                             for($i=0; $i<count($related_facilities); $i++){
-                                $facility_link = '#'.$related_facilities[$i]['id'];
+
                                 echo "<tr>
                     <th scope='row'>".$related_facilities[$i]['id']."</th>
                     <td>" .$related_facilities[$i]['name']."</td>
-                    <td> <button class='btn btn-primary'  onclick='window.location.href = ". $facility_link .";' >View</button></td>";
+                    <td> <a href='navFacilityDetails.php?fid=".$related_facilities[$i]['id']."'><button class='btn btn-primary'  >View</button></a></td>";
                             }
                             ?>
                             </tr>

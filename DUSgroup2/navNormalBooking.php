@@ -127,7 +127,7 @@ include "side.php";
             <div class="small_inside_row">
                 <input type='checkbox' name='time[]'  value='20'>20:00-21:00
             </div>
-            
+
             <div class="small_inside_row">
                 &nbsp;<input type='checkbox' name='time[]'  value='21'>21:00-22:00
             </div>
