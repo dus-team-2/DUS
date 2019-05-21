@@ -59,8 +59,8 @@ if(!isset($_SESSION["loginStatus"])){
 
         //Content
         $mail->isHTML(true);
-        $mail->Subject = 'bill' . time();
-        $mail->Body    = "<h1>"."user:".$user."  <br/>        "."money:"."$total"."</h1>" . date('Y-m-d H:i:s');
+        $mail->Subject = 'Booking Bill' . time();
+        $mail->Body    = "<h1>"."Hi, ".$user."  <br/>        ".". Your booking is done and you need to pay "."$total"." pounds.</h1>" . date('Y-m-d H:i:s');
         $mail->AltBody = 'The browser does not support';
 
         $mail->send();

@@ -74,7 +74,7 @@ include "config.php";
 						if($result){
 							echo "   <script>
                             setTimeout(function(){window.location.href='ComplexBookingEmail.php'},0);
-							alert ('Book successfully!');
+							alert ('Booked successfully!');
                     </script>";
 						}
 					}else {

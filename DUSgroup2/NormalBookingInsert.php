@@ -96,7 +96,7 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 			if($result){
 			echo "   <script>
    setTimeout(function(){window.location.href='NormalBookingEmail.php';},0);
-   alert ('Book successfully!');
+   alert ('Booked successfully!');
 			</script>";}
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
