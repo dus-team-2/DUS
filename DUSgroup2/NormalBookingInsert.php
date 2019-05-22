@@ -54,7 +54,7 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 				$user = get_user_by_id($id);
 				echo "   <script>
 				setTimeout(function(){window.location.href='navNormalBooking.php';},0);
-				alert (".$user['name']." has already booked！');
+				alert (".$user['username']." has already booked！');
 				</script>";
 				$available = false;
 				break;

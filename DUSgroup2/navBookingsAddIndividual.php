@@ -17,10 +17,10 @@ if($_SESSION["loginStatus"] != 1){
     <h1>Add Individual User Bookings</h1>
 	<?php
     include "config.php";
-    $sql = "SELECT id,name FROM facility";
+    $sql = "SELECT id,name FROM facility ORDER BY name ASC;";
     $result = mysqli_query($conn, $sql);
 
-    $sql1 = "SELECT id, username FROM user";
+    $sql1 = "SELECT id, username FROM user ORDER BY username ASC;";
     $result1 = mysqli_query($conn, $sql1);
     ?>
     <form action="ComplexBookingInsert.php" method="post">

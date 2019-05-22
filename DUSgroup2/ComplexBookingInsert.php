@@ -1,13 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>insert</title>
-</head>
 
-<body>
 <?php
-session_start();
+	require_once("model/booking.php");
+include "header.php";
+include "header2.php";
+include "side.php";
+//session_start();
+
+if($_SESSION["loginStatus"] != 1){
+    echo "<script>
+            window.location = 'navLoginUser.php';
+        </script>";
+}
+//session_start();
 include "config.php";
   $user_id=$_POST['user'];
   $facility=$_POST['facility'];
@@ -21,6 +25,17 @@ include "config.php";
  foreach ($facility as $key => $var){
      //echo $var;
      //echo "</br>";
+	 if(check_duplicate($var, $date, $time, $user_id)){
+		 $user = get_user_by_id($user_id);
+		 //print_r($user);
+	   echo "   <script>
+   setTimeout(function(){window.location.href='navBookingsAddIndividual.php';},0);
+   alert ('".$user['username']." have already booked！');
+   </script>";
+   $available = false;
+			break;
+   }
+   
      $result3 = mysqli_query($conn,"SELECT * FROM booking_timeslot WHERE date='$date' AND slot='$time';");
      $a=0;
 
@@ -93,8 +108,6 @@ include "config.php";
 	$_SESSION['totalComplex'] = $price;
 	$_SESSION['uid'] = $user_id;
 	
-	
+	include "footer.php";
 	 
 ?>
-</body>
-</html>

@@ -13,7 +13,7 @@ if($_SESSION["loginStatus"] != 1){
 }
 // require "dbconfig.php";
 include "config.php";
-    $sql = "SELECT id,name FROM facility";
+    $sql = "SELECT id,name FROM facility ORDER BY name ASC;";
     $result = mysqli_query($conn, $sql);
 ?>
 
