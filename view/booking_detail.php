@@ -27,11 +27,11 @@ require_once ('../controller/booking_detail.php');
                     } ?></h2>
                 <h2>ID : <?php echo $current_booking['id'] ?></h2>
                 <button class="btn btn-primary" onclick="if(confirm('Are you sure to delete this booking?')){window.location.href = '../controller/delete_booking.php?bid=<?php echo $current_booking['id'] ?>'}">Delete</button>
-
+                <hr/>
             </div>
 
 
-            <hr/>
+
 
             <div id="fixed_event_div" style="display: <?php if ($is_fixed){
                 echo 'block';

@@ -85,7 +85,7 @@ include "header2.php";
         </ul>
     </div>
 
-    <div class="span9">
+    <div class="span9" style="padding-right: 5%">
         <h1>Event Calendar</h1>
         <p>* Click on the events to check details !</p>
 		<div class="main">
