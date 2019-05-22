@@ -113,62 +113,74 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     unset($pdo);
 }
 ?>
-
-<div class="span9">
-    <h1>Register</h1>
-</div>
-
-<div class="span9">
-    <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
-
-        <div>
-            <label for="usernameId">Username</label>
-            <input type="text" placeholder="Username" id="usernameId" name="username">
-            <span><?php echo $usernameError?></span>
+<div class="individual_content">
+    <div class="individual_second_layer">
+        <div class="span9">
+            <h2>Register</h2>
         </div>
 
-        <div>
-            <label for="passwordId">Password (6-16 characters, include at least one upper case letter and one number)</label>
-            <input type="password" placeholder="Password" id="passwordId" name="password">
-            <span><?php echo $passwordError?></span>
+        <div class="span9">
+            <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+
+                <div class="form-row">
+                    <label for="usernameId">Username</label>
+                    <input type="text" class="form-control" placeholder="Username" id="usernameId" name="username">
+                    <span><?php echo $usernameError?></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="passwordId">Password (6-16 characters, include at least one upper case letter and one number)</label>
+                    <input type="password" class="form-control" placeholder="Password" id="passwordId" name="password">
+                    <span><?php echo $passwordError?></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="confirmPasswordId">Confirm password</label>
+                    <input type="password" class="form-control" placeholder="Confirm password" id="confirmPasswordId" name="confirmPassword">
+                    <span><?php echo $confirmPasswordError?></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="emailId">Email</label>
+                    <input type="text" class="form-control" placeholder="abc@gmail.com" id="emailId" name="email">
+                    <span><?php echo $emailError?></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="questionId">Recovery Question</label>
+                    <textarea class="form_textarea" style="width:400px" placeholder="Your question" id="questionId" name="question" required></textarea>
+                    <br>
+                    <textarea class="form_textarea" style="width:400px" placeholder="Your answer" id="answerId" name="answer" required></textarea>
+                </div>
+
+                <br>
+
+
+                <div class="form-row">
+                    <label>Are you a member of Durham University?</label>
+                </div>
+                <div class="form-row">
+                    <input type="radio" id="yesMemberId" name="membership" value="1" required>
+                    <label style="display:inline; padding-right: 5%; padding-left: 5%" for="yesMemberId">Yes   </label>
+                    <input type="radio" id="noMemberId" name="membership" value="0">
+                    <label style="display:inline;padding-right: 5%; padding-left: 5%" for="noMemberId">No</label>
+                </div>
+
+                <br>
+
+                <div class="form-row">
+                    <div style="float:left;padding-right: 5%">
+                        <button type="submit" class="btn btn-primary" name="registerSubmit">Register</button>
+                    </div>
+                    <div style="float:left;padding-right: 5%">
+                        <a href="facilities.php" class="btn btn-primary">Cancel</a>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <div>
-            <label for="confirmPasswordId">Confirm password</label>
-            <input type="password" placeholder="Confirm password" id="confirmPasswordId" name="confirmPassword">
-            <span><?php echo $confirmPasswordError?></span>
-        </div>
 
-        <div>
-            <label for="emailId">Email</label>
-            <input type="text" placeholder="abc@gmail.com" id="emailId" name="email">
-            <span><?php echo $emailError?></span>
-        </div>
-
-        <div>
-            <label for="questionId">Recovery Question</label>
-            <input type="textarea" style="width:400px" placeholder="Your question" id="questionId" name="question" required>
-            <br>
-            <input type="textarea" style="width:400px" placeholder="Your answer" id="answerId" name="answer" required>
-        </div>
-        
-        <br>
-
-        <p>Are you a member of Durham University?</p>
-        <div>
-            <input type="radio" id="yesMemberId" name="membership" value="1" required>
-            <label style="display:inline" for="yesMemberId">Yes</label>
-            <input type="radio" id="noMemberId" name="membership" value="0">
-            <label style="display:inline" for="noMemberId">No</label>
-        </div>
-
-        <br>
-
-        <div>
-            <button type="submit" class="btn btn-warning" name="registerSubmit">Register</button>
-            <a href="facilities.php" class="btn btn-danger">Cancel</a>
-        </div>
-    </form>
+    </div>
 </div>
 
 
