@@ -5,7 +5,7 @@
  * Date: 2019-05-12
  * Time: 20:19
  */
-$current_user = 1;
+$current_user = $_SESSION['id'];
 ?>
 
 

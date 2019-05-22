@@ -16,11 +16,11 @@ include "header2.php";
 include "side.php";
 //session_start();
 
-/*if(!isset($_SESSION["loginStatus"])){
+if(!isset($_SESSION["loginStatus"])){
     echo "<script>
             window.location = 'navLoginUser.php';
         </script>";
-}*/
+}
 // require "dbconfig.php";
 
 ?>

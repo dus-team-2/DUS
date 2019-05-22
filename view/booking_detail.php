@@ -6,7 +6,7 @@
  * Time: 14:54
  */
 //insert the link to facility detail page
-$current_user = 2;
+$current_user = $_SESSION['id'];
 require_once ('../controller/booking_detail.php');
 
 ?>
