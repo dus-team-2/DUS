@@ -79,7 +79,7 @@ require_once ('../controller/booking_detail.php');
                         <tr>
                             <th scope="row">Place/Facility: </th>
                             <td><?php echo $related_facilities[0]['name'] ?></td>
-                            <td> <button class="btn btn-primary" onclick="window.location.href = 'navFacilityDetails.php?fid=<?php $related_facilities[0]['id'] ?>';">View</button></td>
+                            <td> <button class="btn btn-primary" onclick="window.location.href = 'navFacilityDetails.php?fid=<?php echo $related_facilities[0]['id'] ?>';">View</button></td>
                         </tr>
                     </tbody>
                 </table>
