@@ -99,9 +99,9 @@ if($_SESSION["loginStatus"] != 1){
 
 ?>
 
-<div class="span9">
+<div class="span9" style="padding-right: 5%">
     <h1>Overall Calendar</h1>
-    <p>* Click on the bookings to check details !</p>
+    <p class="explain">* Click on the bookings to check details !</p>
 	<div id='calendar'></div>
 </div>
 
