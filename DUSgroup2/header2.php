@@ -74,10 +74,10 @@
 
 						<li> 
 							<a>My Account</a>
-							<ul>
-								<li><a href="navAccountBookings.php">My Bookings</a></li>
-								<li><a href="navAccountInfo.php">Personal Information</a></li>
-								<li><a href="navAccountResetPwd.php">Reset Password</a></li>
+							<ul style="width:auto">
+								<li style="width:auto"><a href="navAccountBookings.php">My Bookings</a></li>
+								<li style="width:auto"><a href="navAccountInfo.php">Personal Information</a></li>
+								<li style="width:auto"><a href="navAccountResetPwd.php">Reset Password</a></li>
 							</ul>
 						</li>
 
@@ -96,20 +96,20 @@
 
 						<li> 
 							<a>My Account</a>
-							<ul>
-								<li><a href="navAccountBookings.php">My Bookings</a></li>
-								<li><a href="navAccountInfo.php">Personal Information</a></li>
-								<li><a href="navAccountResetPwd.php">Reset Password</a></li>
+							<ul style="width:auto">
+								<li style="width:auto"><a href="navAccountBookings.php">My Bookings</a></li>
+								<li style="width:auto"><a href="navAccountInfo.php">Personal Information</a></li>
+								<li style="width:auto"><a href="navAccountResetPwd.php">Reset Password</a></li>
 							</ul>
 						</li>
 
 						<li> 
 							<a>Bookings</a>
-							<ul>
-								<li><a href="navBookingsAddIndividual.php">Add Individual User Bookings</a></li>
-								<li><a href="navMakeMyBooking.php">Make My Booking</a></li>
-								<li><a href="navBookingsBlock.php">Block Periods</a></li>
-								<li><a href="navBookingsOverallCalendar.php">Overall Calendar</a></li>
+							<ul style="width:auto">
+								<li style="width:auto"><a href="navBookingsAddIndividual.php">Add Individual User Bookings</a></li>
+								<li style="width:auto"><a href="navMakeMyBooking.php">Make My Booking</a></li>
+								<li style="width:auto"><a href="navBookingsBlock.php">Block Periods</a></li>
+								<li style="width:auto"><a href="navBookingsOverallCalendar.php">Overall Calendar</a></li>
 							</ul>
 						</li>
 

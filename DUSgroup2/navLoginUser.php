@@ -77,14 +77,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div>
                     <label class="col-form-label" for="usernameId">Username</label>
                     <input type="text" class="form-control" placeholder="Username" id="usernameId" name="username">
-                    <span class="help-block"><?php echo $usernameError?></span>
+                    <span class="help-block"><?php print "<font color='#FF0000'>$usernameError</font>"?></span>
                 </div>
 
                 <div>
                     <label class="col-form-label" for="passwordId">Password</label>
                     <input type="password" class="form-control" placeholder="Password" id="passwordId" name="password">
                     <a href="navLoginPwdForgot.php">Forgot password?</a>
-                    <span class="help-block"><?php echo $passwordError?></span>
+                    <span class="help-block"><?php print "<font color='#FF0000'>$passwordError</font>"?></span>
                 </div>
 
                 <div>

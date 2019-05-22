@@ -125,25 +125,25 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 <div class="form-row">
                     <label for="usernameId">Username</label>
                     <input type="text" class="form-control" placeholder="Username" id="usernameId" name="username">
-                    <span><?php echo $usernameError?></span>
+                    <span><?php print "<font color='#FF0000'>$usernameError</font>"?></span>
                 </div>
 
                 <div class="form-row">
                     <label for="passwordId">Password (6-16 characters, include at least one upper case letter and one number)</label>
                     <input type="password" class="form-control" placeholder="Password" id="passwordId" name="password">
-                    <span><?php echo $passwordError?></span>
+                    <span><?php print "<font color='#FF0000'>$passwordError</font>"?></span>
                 </div>
 
                 <div class="form-row">
                     <label for="confirmPasswordId">Confirm password</label>
                     <input type="password" class="form-control" placeholder="Confirm password" id="confirmPasswordId" name="confirmPassword">
-                    <span><?php echo $confirmPasswordError?></span>
+                    <span><?php print "<font color='#FF0000'>$confirmPasswordError</font>"?></span>
                 </div>
 
                 <div class="form-row">
                     <label for="emailId">Email</label>
                     <input type="text" class="form-control" placeholder="abc@gmail.com" id="emailId" name="email">
-                    <span><?php echo $emailError?></span>
+                    <span><?php print "<font color='#FF0000'>$emailError</font>"?></span>
                 </div>
 
                 <div class="form-row">
