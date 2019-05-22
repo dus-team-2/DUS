@@ -215,8 +215,8 @@ if(isset($_GET["adminFacilitiesEditName"])) {
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
 	$tempEmail = "";
-	if(isset($_POST["adminFacilitiesAddEmail"])) {
-	$tempEmail = $_POST['adminFacilitiesAddEmail'];}
+	if(isset($_POST["adminFacilitiesEditEmail"])) {
+	$tempEmail = $_POST['adminFacilitiesEditEmail'];}
 	$checkEmail="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/";
 	if(!preg_match($checkEmail,$tempEmail)){
 				echo "<script>

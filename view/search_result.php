@@ -46,7 +46,7 @@ require_once ('../controller/search_result.php');
                                 <div class='d-flex w-100 justify-content-between'>
                                     <h5 class='mb-1'>". $facility_result_set[$i]['name'] ."</h5>
                                 </div>
-                                <p class='mb-1'>". $description ."</p>
+                                <p class='mb-1' style='word-wrap:break-word;word-break:break-all;'>". $description ."</p>
                                 
                             </div>
                             <div id='id4' style='clear:both'></div>
@@ -75,7 +75,7 @@ require_once ('../controller/search_result.php');
                                         <div class='d-flex w-100 justify-content-between'>
                                             <h5 class='mb-1'>". $event_result_set[$i]['title'] ."</h5>
                                         </div>
-                                        <p class='mb-1'>". $description ."</p>
+                                        <p class='mb-1' style='word-wrap:break-word;word-break:break-all;'>". $description ."</p>
                                         
                                     </div>
                                     <div id='id4' style='clear:both'></div>

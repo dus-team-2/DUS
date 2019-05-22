@@ -16,7 +16,7 @@ require_once ('../controller/profile.php');
     </div>
     <div>
         <div id="show_pic">
-            <img src="<?php echo $current_user_all['pic'] ?>" id="profile_pic">
+            <img src="<?php echo $current_user_all['pic'] ?>" id="profile_pic" onerror="this.src='../view/image/black.png'">
         </div>
         <div id="show_profile_info">
             <table class="table">
