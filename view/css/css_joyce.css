@@ -98,12 +98,16 @@
 }
 
 #message_div{
-    padding-left: 15%;
+    padding-left: 30%;
 }
 
 #filter_content{
     width: 40% !important;
-    float: left !important;
+    float: right !important;
+}
+
+#filter_button{
+    float: right;
 }
 
 #search_content{
@@ -112,10 +116,10 @@
 }
 
 #filter_div,#search_again_div{
-    text-align: left;
+    text-align: right;
     padding-bottom: 20px;
     width: 50%;
-    float: left;
+    float: right;
 }
 
 #operation_div,#message_div,#search_result_div{

@@ -20,17 +20,11 @@ require_once ('../controller/search_result.php');
                     <option value="2">Only facility</option>
                     <option value="3">Only event</option>
                 </select>
-                <button class="btn btn-primary" onclick="filter_search()">Apply</button>
-            </div>
-            <div id="search_again_div">
-                <form action="../DUSgroup2/navSearchResult.php" method="post">
-                    <input type="text" id="search_content" name="search_content" class="form-control" />
-                    <button type="submit" class="btn btn-primary">search</button>
-                </form>
+                <button id="filter_button" class="btn btn-primary" onclick="filter_search()">Apply</button>
             </div>
         </div>
         <div id="message_div">
-            <p class="explain" style="color: #742e68; font-size: 20px"><?php echo $search_message ?></p>
+            <p class="explain" style="color: #742e68; font-size: 15px"><?php echo $search_message ?></p>
         </div>
         <!--facility list-->
         <div id="search_result_div">

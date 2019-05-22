@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a3ed9cf-8e37-470c-be8f-b97b35aa2204" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/navLoginUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navLoginUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/css/css_joyce.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/css/css_joyce.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/search_result.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/search_result.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,16 +13,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
+            <state relative-caret-position="1350">
               <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/search_result.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="26" column="104" lean-forward="true" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>filter_div</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +63,6 @@
         <option value="$PROJECT_DIR$/DUSgroup2/navBookingsOverallCalendar.php" />
         <option value="$PROJECT_DIR$/model/common.php" />
         <option value="$PROJECT_DIR$/controller/delete_booking.php" />
-        <option value="$PROJECT_DIR$/view/css/css_joyce.css" />
         <option value="$PROJECT_DIR$/DUSgroup2/facilities.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/areobics.css" />
         <option value="$PROJECT_DIR$/DUSgroup2/navAccountInfo.php" />
@@ -52,6 +77,8 @@
         <option value="$PROJECT_DIR$/view/booking_detail.php" />
         <option value="$PROJECT_DIR$/view/js/jquery.photoClip.js" />
         <option value="$PROJECT_DIR$/DUSgroup2/navLoginUser.php" />
+        <option value="$PROJECT_DIR$/view/search_result.php" />
+        <option value="$PROJECT_DIR$/view/css/css_joyce.css" />
       </list>
     </option>
   </component>
@@ -85,6 +112,17 @@
               <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DUS" type="462c0819:PsiDirectoryNode" />
               <item name="DUSgroup2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DUS" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DUS" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -133,12 +171,12 @@
       <workItem from="1558443861009" duration="4643000" />
       <workItem from="1558522076839" duration="721000" />
       <workItem from="1558523235132" duration="62000" />
-      <workItem from="1558523326115" duration="1545000" />
+      <workItem from="1558523326115" duration="2009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26206000" />
+    <option name="totallyTimeSpent" value="26670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -285,13 +323,6 @@
     <entry file="file://$PROJECT_DIR$/DUSgroup2/images/Other-Facilities.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2670">
-          <caret line="178" column="22" selection-start-line="178" selection-start-column="22" selection-end-line="178" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/facility_details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -344,9 +375,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/view/private_booking_list.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/search_result.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/view/update_profile.php">
@@ -462,8 +490,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
+        <state relative-caret-position="1350">
           <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/search_result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="104" lean-forward="true" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
         </state>
       </provider>
     </entry>
