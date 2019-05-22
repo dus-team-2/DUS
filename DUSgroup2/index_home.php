@@ -1,6 +1,6 @@
 
 <div id="container">
-    <div class="img_row_container"><h2>Our Facilities</h2></div>
+    <div class="img_row_container"><h2 style="color: #1a1a1a">Our Facilities</h2></div>
     <div class="img_row_container">
         <div class="one_div">
             <img src="images/Maiden-Castle.jpg" id="grahansports" alt="" class="big_imgs">
