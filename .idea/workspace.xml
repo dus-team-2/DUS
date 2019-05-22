@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a3ed9cf-8e37-470c-be8f-b97b35aa2204" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/navAccountBookings.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navAccountBookings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DUSgroup2/try_files/team-durham.css" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/try_files/team-durham.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/css/css_joyce.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/css/css_joyce.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,19 +17,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DUSgroup2/navNormalBooking.php">
+        <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="3180">
+              <caret line="212" column="30" lean-forward="true" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
+        <entry file="file://$PROJECT_DIR$/DUSgroup2/navAccountBookings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+            <state relative-caret-position="581">
+              <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+              <folding>
+                <element signature="e#2788#2813#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DUSgroup2/try_files/team-durham.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="16" column="50253" selection-start-line="16" selection-start-column="50253" selection-end-line="16" selection-end-column="50253" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="271" column="52" selection-start-line="271" selection-start-column="52" selection-end-line="271" selection-end-column="52" />
+              <folding>
+                <element signature="e#8421#8446#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,31 +76,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DUSgroup2/navFacilitiesDelete.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="1869" column="86" lean-forward="true" selection-start-line="1857" selection-start-column="2" selection-end-line="1869" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/search_result.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="104" lean-forward="true" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="251">
+              <caret line="2377" column="5" selection-start-line="2377" selection-start-column="1" selection-end-line="2377" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -98,13 +105,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/booking_detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="28" column="85" selection-start-line="28" selection-start-column="85" selection-end-line="28" selection-end-column="85" />
+            <state relative-caret-position="318">
+              <caret line="135" column="24" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="662">
@@ -120,6 +131,9 @@
       <find>form-con</find>
       <find>filter_div</find>
       <find>h2</find>
+      <find>btn-dark</find>
+      <find>btn</find>
+      <find>btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,11 +164,15 @@
         <option value="$PROJECT_DIR$/DUSgroup2/navLoginUser.php" />
         <option value="$PROJECT_DIR$/view/search_result.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navFacilitiesAdd.php" />
-        <option value="$PROJECT_DIR$/view/css/css_joyce.css" />
         <option value="$PROJECT_DIR$/DUSgroup2/navFacilitiesEdit.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navFacilitiesDelete.php" />
         <option value="$PROJECT_DIR$/view/booking_detail.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php" />
+        <option value="$PROJECT_DIR$/view/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php" />
+        <option value="$PROJECT_DIR$/view/css/css_joyce.css" />
+        <option value="$PROJECT_DIR$/DUSgroup2/navAccountBookings.php" />
+        <option value="$PROJECT_DIR$/DUSgroup2/try_files/team-durham.css" />
       </list>
     </option>
   </component>
@@ -188,6 +206,12 @@
               <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
               <item name="DUS" type="462c0819:PsiDirectoryNode" />
               <item name="DUSgroup2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DUS" type="462c0819:PsiDirectoryNode" />
+              <item name="DUSgroup2" type="462c0819:PsiDirectoryNode" />
+              <item name="try_files" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DUS" type="b2602c69:ProjectViewProjectNode" />
@@ -247,12 +271,12 @@
       <workItem from="1558443861009" duration="4643000" />
       <workItem from="1558522076839" duration="721000" />
       <workItem from="1558523235132" duration="62000" />
-      <workItem from="1558523326115" duration="8153000" />
+      <workItem from="1558523326115" duration="10017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32814000" />
+    <option name="totallyTimeSpent" value="34678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -295,19 +319,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/TEST_search.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../temp/index_home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-563">
@@ -540,24 +551,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navFacilitiesDelete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="1869" column="86" lean-forward="true" selection-start-line="1857" selection-start-column="2" selection-end-line="1869" selection-end-column="86" />
+        <state relative-caret-position="750">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/navFacilitiesAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1257">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <state relative-caret-position="662">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -576,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/navFacilitiesDelete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/navBookingDetail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -592,15 +589,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/booking_detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="28" column="85" selection-start-line="28" selection-start-column="85" selection-end-line="28" selection-end-column="85" />
+        <state relative-caret-position="318">
+          <caret line="135" column="24" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/navBookingsAddIndividual.php">
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navMakeMyBooking.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="339">
+          <caret line="271" column="52" selection-start-line="271" selection-start-column="52" selection-end-line="271" selection-end-column="52" />
+          <folding>
+            <element signature="e#8421#8446#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="2377" column="5" selection-start-line="2377" selection-start-column="1" selection-end-line="2377" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navFacilitiesAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1257">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/css_joyce.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="212" column="30" lean-forward="true" selection-start-line="212" selection-start-column="30" selection-end-line="212" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navAccountBookings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+          <folding>
+            <element signature="e#2788#2813#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/try_files/team-durham.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="16" column="50253" selection-start-line="16" selection-start-column="50253" selection-end-line="16" selection-end-column="50253" />
         </state>
       </provider>
     </entry>

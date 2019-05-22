@@ -81,8 +81,8 @@ include "side.php";
 
 ?>
 
-<div class="span9">
-    <h1>My Bookings</h1>
+<div class="span9" style="padding-right: 5%">
+    <h2>My Bookings</h2>
 	<div class="main">
 			<div id='calendar'></div>
 		</div>

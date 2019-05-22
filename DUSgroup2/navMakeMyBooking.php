@@ -263,33 +263,34 @@ if(!isset($_SESSION["loginStatus"])){
 // require "dbconfig.php";
 
 ?>
+        <div class="span9" style="padding-right: 5%">
+            <h1>Facilities availability</h1>
+            <div>
+                <button id='sc' class="btn_calendar" value='Squash courts'>Squash courts</button>
+                <button id='ar' class="btn_calendar" value='Aerobics room'>Aerobics room</button>
+                <button id='t' class="btn_calendar" value='Tennis'>Tennis</button>
+                <button id='at' class="btn_calendar" value='Athletics track'>Athletics track</button>
+            </div>
+            <div id='scCld'>
+                <h2>Squash courts</h2>
+                <div id='calendarSC'></div>
+            </div>
+            <div id='arCld'>
+                <h2>Aerobics room</h2>
+                <div id='calendarAR'></div>
+            </div>
+            <div id='tCld'>
+                <h2>Tennis</h2>
+                <div id='calendarT'></div>
+            </div>
+            <div id='atCld'>
+                <h2>Athletics track</h2>
+                <div id='calendarAT'></div>
+            </div>
+            <a href='navNormalBooking.php'><button class="btn btn-primary" type='button'>Book</button></a>
+        </div>
 
-<div class="span9">
-    <h1>Facilities availability</h1>
-	<div>
-				<button id='sc' value='Squash courts'>Squash courts</button>
-				<button id='ar' value='Aerobics room'>Aerobics room</button>
-				<button id='t' value='Tennis'>Tennis</button>
-				<button id='at' value='Athletics track'>Athletics track</button>
-			</div>
-			<div id='scCld'>
-				<h1>Squash courts</h1>
-				<div id='calendarSC'></div>
-			</div>
-			<div id='arCld'>
-				<h1>Aerobics room</h1>
-				<div id='calendarAR'></div>
-			</div>
-			<div id='tCld'>
-				<h1>Tennis</h1>
-				<div id='calendarT'></div>
-			</div>
-			<div id='atCld'>
-				<h1>Athletics track</h1>
-				<div id='calendarAT'></div>
-			</div>
-			<a href='navNormalBooking.php'><button type='button'>Book</button></a>
-</div>
+
 
 
 

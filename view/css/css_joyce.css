@@ -2,6 +2,11 @@ h2{
     color: #1a1a1a;
 }
 
+table{
+    word-break:break-all;
+    word-wrap: break-word;
+}
+
 
 .notice{
     color: red;
@@ -53,12 +58,12 @@ h2{
 }
 
 .table_three_row td{
-    width: 25%;
+    width: 30%;
 }
 
 .table_four_row th{
     color: #742e68;
-    width: 25%;
+    width: 20%;
 }
 
 .table_four_row td{
@@ -201,4 +206,12 @@ h2{
     border: 1px solid #ced4da !important;
     border-radius: 0.25rem !important;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;!important;
+}
+
+.btn_calendar{
+    color: white;
+    background-color: #2C3E50;
+    border-radius: 0.5rem;
+    height: 35px;
+    width: fit-content;
 }
