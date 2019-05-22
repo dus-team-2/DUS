@@ -29,151 +29,170 @@ if(isset($_GET["adminFacilitiesEditName"])) {
 }
 ?>
 
-<div class="span9">
-    <h1>Edit Facilities</h1>
 
-    <!-- Functions to alert if a value is null -->
-    <script>
-        function adminFacilitiesEditSelect(){
-            if(document.getElementById("adminFacilitiesEditSelectId").value==""){
-                alert("Please select a facility.");
-                return false;
-            }
-        }
-    </script>
 
-    <!-- Select a facility -->
-        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="get" id="adminFacilitiesEditSelect">
-            <p>
-                <label for="adminFacilitiesEditSelectId">Please select a facility for editing: </label>
-                <select name="adminFacilitiesEditSelectId" id="adminFacilitiesEditSelectId"/>
-                <option value="">-- Please select --</option>
-                <?php foreach($row as $element){
-                    echo "<option value='".$element['id']."'>".$element['name']."</option>";
+        <div class="span9">
+            <h2>Edit Facilities</h2>
+
+            <!-- Functions to alert if a value is null -->
+            <script>
+                function adminFacilitiesEditSelect(){
+                    if(document.getElementById("adminFacilitiesEditSelectId").value==""){
+                        alert("Please select a facility.");
+                        return false;
+                    }
                 }
-                ?>
-                </select>
-            </p>
-            <div class = "button">
-                <input type="submit" onclick="return adminFacilitiesEditSelect();" value="Submit" />
+            </script>
+
+            <!-- Select a facility -->
+            <div class="individual_content" style="padding-top: 0; padding-bottom: 0">
+                <div class="individual_second_layer" style="padding-top: 0; padding-bottom: 0">
+                    <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="get" id="adminFacilitiesEditSelect">
+                        <div class="form-row">
+                            <label for="adminFacilitiesEditSelectId"><p class="explain"> *Please select a facility for editing: </p></label>
+                            <select class="form-control" name="adminFacilitiesEditSelectId" id="adminFacilitiesEditSelectId"/>
+                            <option value="">-- Please select --</option>
+                            <?php foreach($row as $element){
+                                echo "<option value='".$element['id']."'>".$element['name']."</option>";
+                            }
+                            ?>
+                            </select>
+                        </div>
+                        <br>
+                        <div class = "form-row">
+                            <input type="submit" class="btn btn-primary" onclick="return adminFacilitiesEditSelect();" value="Submit" />
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
 
-<?php
-if(isset($_GET["adminFacilitiesEditSelectId"])) {
-    ?>
 
-    <!-- Functions to alert if a value is not acceptable -->
-    <script>
-        function adminFacilitiesEdit(){
-            if(document.getElementById("adminFacilitiesEditName").value==""||document.getElementById("adminFacilitiesEditName").value.match(/^\s+$/g)){
-                alert("Please enter Facility Name.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditDescription").value==""||document.getElementById("adminFacilitiesEditDescription").value.match(/^\s+$/g)){
-                alert("Please enter Facility Description.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditPrice").value==""||document.getElementById("adminFacilitiesEditPrice").value==.match(/^\s+$/g)){
-                alert("Please enter Facility Price.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditPrice").value<0){
-                alert("The price can not be negative.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditCapacity").value==""||document.getElementById("adminFacilitiesEditCapacity").value.match(/^\s+$/g)){
-                alert("Please enter Facility Capacity.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditCapacity").value<0){
-                alert("The capacity can not be negative.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditEmail").value==""||document.getElementById("adminFacilitiesEditEmail").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Email.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditTel").value==""||document.getElementById("adminFacilitiesEditTel").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Tel.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesEditAddress").value==""||document.getElementById("adminFacilitiesEditAddress").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Address.");
-                return false;
-            }
-        }
-    </script>
+        <?php
+        if(isset($_GET["adminFacilitiesEditSelectId"])) {
+            ?>
 
-    <!-- Edit a facility -->
-        <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesEdit" enctype="multipart/form-data">
-            <p>Please input the information for editing a facility:</p>
-            <p>
-                <label for="adminFacilitiesEditName">Facility Name: </label>
-                <input type="text" name="adminFacilitiesEditName" id="adminFacilitiesEditName"
-                       value="<?php echo $edit_row['name']; ?>"/>
-				<input type="hidden" name="adminFacilitiesEditId" id="adminFacilitiesEditId"
-                       value="<?php echo $edit_row['id']; ?> " />
-            </p>
+            <!-- Functions to alert if a value is not acceptable -->
+            <script>
+                function adminFacilitiesEdit(){
+                    if(document.getElementById("adminFacilitiesEditName").value==""||document.getElementById("adminFacilitiesEditName").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Name.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditDescription").value==""||document.getElementById("adminFacilitiesEditDescription").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Description.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditPrice").value==""||document.getElementById("adminFacilitiesEditPrice").value==.match(/^\s+$/g)){
+                        alert("Please enter Facility Price.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditPrice").value<0){
+                        alert("The price can not be negative.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditCapacity").value==""||document.getElementById("adminFacilitiesEditCapacity").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Capacity.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditCapacity").value<0){
+                        alert("The capacity can not be negative.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditEmail").value==""||document.getElementById("adminFacilitiesEditEmail").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Contact Email.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditTel").value==""||document.getElementById("adminFacilitiesEditTel").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Contact Tel.");
+                        return false;
+                    }
+                    else if(document.getElementById("adminFacilitiesEditAddress").value==""||document.getElementById("adminFacilitiesEditAddress").value.match(/^\s+$/g)){
+                        alert("Please enter Facility Contact Address.");
+                        return false;
+                    }
+                }
+            </script>
 
-            <p>
-                <label for="adminFacilitiesEditDescription">Facility Description: </label>
-                <textarea name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" style="width:300px"><?php echo $edit_row['description']; ?></textarea>
-            </p>
 
-            <p>
-                <label for="adminFacilitiesEditPrice">Facility Price: </label>
-                <input type="number" name="adminFacilitiesEditPrice" id="adminFacilitiesEditPrice" min="0" 
-                       value="<?php echo $edit_row['price']; ?>"/>
-            </p>
+            <div class="individual_content" >
+                <div class="individual_second_layer" style="padding-top: 0">
 
-            <p>
-                <label for="adminFacilitiesEditCapacity">Facility Capacity: </label>
-                <input type="number" name="adminFacilitiesEditCapacity" id="adminFacilitiesEditCapacity" min="0" 
-                       value="<?php echo $edit_row['capacity']; ?>"/>
-            </p>
+            <!-- Edit a facility -->
+                    <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesEdit" enctype="multipart/form-data">
+                        <p class="explain">*Please input the information for editing a facility:</p>
+                        <div class="form-row">
+                            <label for="adminFacilitiesEditName">Facility Name: </label>
+                            <input type="text" class="form-control" name="adminFacilitiesEditName" id="adminFacilitiesEditName"
+                                   value="<?php echo $edit_row['name']; ?>"/>
+                            <input type="hidden" name="adminFacilitiesEditId" id="adminFacilitiesEditId"
+                                   value="<?php echo $edit_row['id']; ?> " />
+                        </div>
 
-            <p>
-                <label for="adminFacilitiesEditEmail">Facility Contact Email: </label>
-                <input type="text" name="adminFacilitiesEditEmail" id="adminFacilitiesEditEmail"
-                       value="<?php echo $edit_row['contact_email']; ?>"/>
-            </p>
+                        <div class="form-row">
+                            <label for="adminFacilitiesEditDescription">Facility Description: </label>
+                            <textarea class="form_textarea" rows="5" name="adminFacilitiesEditDescription" id="adminFacilitiesEditDescription" "><?php echo $edit_row['description']; ?></textarea>
+                        </div>
 
-            <p>
-                <label for="adminFacilitiesEditTel">Facility Contact Tel: </label>
-                <input type="text" name="adminFacilitiesEditTel" id="adminFacilitiesEditTel"
-                       value="<?php echo $edit_row['contact_tel']; ?>"/>
-            </p>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="adminFacilitiesEditPrice">Facility Price: </label>
+                                <input type="number" class="form-control" name="adminFacilitiesEditPrice" id="adminFacilitiesEditPrice" min="0"
+                                       value="<?php echo $edit_row['price']; ?>"/>
+                            </div>
 
-            <p>
-                <label for="adminFacilitiesEditAddress">Facility Contact Address: </label>
-                <textarea name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" style="width:300px" ><?php echo $edit_row['contact_address']; ?></textarea>
-            </p>
+                            <div class="form-group col-md-6">
+                                <label for="adminFacilitiesEditCapacity">Facility Capacity: </label>
+                                <input type="number" class="form-control" name="adminFacilitiesEditCapacity" id="adminFacilitiesEditCapacity" min="0"
+                                       value="<?php echo $edit_row['capacity']; ?>"/>
+                            </div>
+                        </div>
 
-			<p> Original picture: </p>
-			<p><img src="<?php echo $edit_row['pic']; ?>" style="width:250pt" /></p>
-			
-            <p>
-                <label for="adminFacilitiesEditPic">Choose new picture</label>
-                <input type="file" name="adminFacilitiesEditPic" id="adminFacilitiesEditPic" value="<?php echo $edit_row['pic']; ?>"/>
-				<input type='hidden' name='pic1' value="<?php echo $edit_row['pic']; ?>"/>
-			<br>
-			<br>
-			
-			<p> Original picture 2: </p>
-			<p><img src="<?php echo $edit_row['pic_2']; ?>" style="width:250pt" /></p>
-			
-            <p>
-                <label for="adminFacilitiesEditPic2">Choose new picture 2</label>
-                <input type="file" name="adminFacilitiesEditPic2" id="adminFacilitiesEditPic2" value="<?php echo $edit_row['pic_2']; ?>"/>
-				<input type='hidden' name='pic2' value="<?php echo $edit_row['pic_2']; ?>"/>
-            </p>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="adminFacilitiesEditEmail">Facility Contact Email: </label>
+                                <input type="text" class="form-control" name="adminFacilitiesEditEmail" id="adminFacilitiesEditEmail"
+                                       value="<?php echo $edit_row['contact_email']; ?>"/>
+                            </div>
 
-            <div class="button">
-                <input type="submit" onclick="return adminFacilitiesEdit();" value="Submit"/>
+                            <div class="form-group col-md-6">
+                                <label for="adminFacilitiesEditTel">Facility Contact Tel: </label>
+                                <input type="text" class="form-control" name="adminFacilitiesEditTel" id="adminFacilitiesEditTel"
+                                       value="<?php echo $edit_row['contact_tel']; ?>"/>
+                            </div>
+                        </div>
 
+
+                        <div class="form-row">
+                            <label for="adminFacilitiesEditAddress">Facility Contact Address: </label>
+                            <textarea class="form_textarea" rows="3" name="adminFacilitiesEditAddress" id="adminFacilitiesEditAddress" style="width:300px" ><?php echo $edit_row['contact_address']; ?></textarea>
+                        </div>
+
+                        <p> Original picture: </p>
+                        <p><img src="<?php echo $edit_row['pic']; ?>" style="width:250pt" /></p>
+
+                        <p>
+                            <label for="adminFacilitiesEditPic">Choose new picture</label>
+                            <input type="file" class="form-control" name="adminFacilitiesEditPic" id="adminFacilitiesEditPic" value="<?php echo $edit_row['pic']; ?>"/>
+                            <input type='hidden' name='pic1' value="<?php echo $edit_row['pic']; ?>"/>
+                        <br>
+                        <br>
+
+                        <p> Original picture 2: </p>
+                        <p><img src="<?php echo $edit_row['pic_2']; ?>" style="width:250pt" /></p>
+
+                        <p>
+                            <label for="adminFacilitiesEditPic2">Choose new picture 2</label>
+                            <input type="file" class="form-control" name="adminFacilitiesEditPic2" id="adminFacilitiesEditPic2" value="<?php echo $edit_row['pic_2']; ?>"/>
+                            <input type='hidden' name='pic2' value="<?php echo $edit_row['pic_2']; ?>"/>
+                        </p>
+
+                        <div class="button">
+                            <input type="submit" class="btn btn-primary" onclick="return adminFacilitiesEdit();" value="Submit"/>
+
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
 </div>
 
     //show file name
@@ -199,12 +218,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 	if(isset($_POST["adminFacilitiesAddEmail"])) {
 	$tempEmail = $_POST['adminFacilitiesAddEmail'];}
 	$checkEmail="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/";
-	if(!preg_match($checkEmail,$tempEmail)){	
+	if(!preg_match($checkEmail,$tempEmail)){
 				echo "<script>
             alert('Invalid email!');
             window.location = 'navFacilitiesEdit.php';
         </script>";
-		
+
             }else{
     if(!empty($_FILES["adminFacilitiesEditPic"]["name"])){
         $fileName = $_FILES["adminFacilitiesEditPic"]["name"];
@@ -228,7 +247,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     }else{
         $newFileName2 = $_POST['pic2'];
     }
-		
+
     $sql = 'UPDATE Xdqrs89_SE2_DUS.facility SET
 facility.name="'.$_POST['adminFacilitiesEditName'].'", 
 facility.description="'.$_POST['adminFacilitiesEditDescription'].'", 
