@@ -12,7 +12,7 @@
 		$facility = get_one_data($sql);
 		$sql = "SELECT booking.id AS id, is_fixed, title, content, date, slot, capacity AS booked, capacity FROM booking JOIN booking_timeslot AS t ON booking.id = t.booking_id JOIN booking_facility AS f ON booking.id = f.booking_id JOIN facility ON f.facility_id = facility.id WHERE f.facility_id = '".$facility['id']."' AND is_fixed = 1;";
 		$fixedEvents = get_all_data($sql);
-		$sql = "SELECT booking.id AS id, is_fixed, title, content, date, slot, COUNT(*) AS booked, capacity FROM booking JOIN booking_timeslot AS t ON booking.id = t.booking_id JOIN booking_facility AS f ON booking.id = f.booking_id JOIN facility ON f.facility_id = facility.id WHERE f.facility_id = '".$facility['id']."' AND is_fixed = 0 GROUP BY date, slot;";
+		$sql = "SELECT booking.id AS id, is_fixed, title, content, date, slot, COUNT(*) AS booked, capacity FROM booking JOIN user_booking AS u ON booking.id = u.booking_id JOIN booking_timeslot AS t ON booking.id = t.booking_id JOIN booking_facility AS f ON booking.id = f.booking_id JOIN facility ON f.facility_id = facility.id WHERE f.facility_id = '".$facility['id']."' AND is_fixed = 0 GROUP BY date, slot;";
 		$bookings = get_all_data($sql);
 		$bookings = array_merge($fixedEvents, $bookings);
 		foreach($bookings as &$booking){
