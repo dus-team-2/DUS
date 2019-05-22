@@ -45,7 +45,7 @@
 			$space = 0;
 			
 		}else{
-			$sql = "SELECT COUNT(*) AS booked FROM booking JOIN booking_timeslot AS t ON t.booking_id = booking.id JOIN booking_facility AS f ON booking.id = f.booking_id WHERE f.facility_id = '".$facilityId."' AND is_fixed = 0 GROUP BY date, slot HAVING t.date = '".$date."' AND t.slot = '".$time."';";
+			$sql = "SELECT COUNT(*) AS booked FROM booking JOIN booking_timeslot AS t ON t.booking_id = booking.id JOIN user_booking AS u ON booking.id = u.booking_id JOIN booking_facility AS f ON booking.id = f.booking_id WHERE f.facility_id = '".$facilityId."' AND is_fixed = 0 GROUP BY date, slot HAVING t.date = '".$date."' AND t.slot = '".$time."';";
 			$pdo = make_database_connection();
 			$statement = $pdo->query($sql);
 			$result = $statement->rowCount();
@@ -57,5 +57,24 @@
 			}
 		}
 		return $space;
+	}
+	
+	function check_duplicate($facilityId, $date, $time, $userId){
+		$sql = "SELECT * FROM booking JOIN booking_timeslot AS t ON t.booking_id = booking.id JOIN user_booking AS u ON booking.id = u.booking_id JOIN booking_facility AS f ON booking.id = f.booking_id WHERE f.facility_id = '".$facilityId."' AND t.date = '".$date."' AND t.slot = '".$time."' AND u.user_id = '".$userId."';";
+		$pdo = make_database_connection();
+		$statement = $pdo->query($sql);
+		$result = $statement->rowCount();
+		if($result){
+			$result = TRUE;
+		}else{
+			$result = FALSE;
+		}
+		return $result;
+	}
+	
+	function get_user_by_id($userId){
+		$sql = "SELECT * FROM user WHERE id = '".$userId."';";
+		$user = get_one_data($sql);
+		return $user;
 	}
 ?>

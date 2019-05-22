@@ -1,6 +1,6 @@
 
 <?php
-	
+	require_once("model/booking.php");
 include "header.php";
 include "header2.php";
 include "side.php";
@@ -22,11 +22,13 @@ include "config.php";
   $time=$_POST['time'];
   if(isset($_POST['user_ids'])){
 	  $user_ids = $_POST['user_ids'];
+	  $coun1=count($user_ids);
   }
   $coun=count($time);
 $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	$facility= mysqli_fetch_array($result5);
 	$capacity=$facility['capacity'];
+	
 	//echo $capacity;
 	$price = $coun * $facility['price'];
 	$_SESSION['total']=$price;
@@ -35,7 +37,52 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
  foreach ($time as $key => $var){
     //$var;
    //echo "</br>";
-	$result3 = mysqli_query($conn,"SELECT * FROM booking_timeslot WHERE date='$date' AND slot='$var';");
+   
+   if(check_duplicate($facility['id'], $date, $var, $user_id)){
+	   echo "   <script>
+   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
+   alert ('You have already booked！');
+   </script>";
+   $available = false;
+			break;
+   }
+   $space = check_space($facility['id'], $date, $var);
+   if($space>0){
+	  if(!empty($user_ids)){
+		foreach ($user_ids as $id){
+			if(check_duplicate($facility['id'], $date, $var, $id)){
+				$user = get_user_by_id($id);
+				echo "   <script>
+				setTimeout(function(){window.location.href='navNormalBooking.php';},0);
+				alert (".$user['name']." has already booked！');
+				</script>";
+				$available = false;
+				break;
+			}
+		}
+		if($coun1<$space){}
+	else{
+	    echo "   <script>
+   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
+   alert ('Only ".$space." space left！');
+   </script>";
+   $available = false;
+			break;
+ }
+   } 
+   }else{
+	   echo "   <script>
+   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
+   alert ('The number has reached the upper limit！');
+   </script>";
+   $available = false;
+			break;
+   }
+    if(!$available){
+		break;
+	}
+   
+	/*$result3 = mysqli_query($conn,"SELECT * FROM booking_timeslot WHERE date='$date' AND slot='$var';");
 	$a=0;
 	while($row3 = mysqli_fetch_array($result3))
 {
@@ -46,19 +93,11 @@ $result5 = mysqli_query($conn,"SELECT * FROM facility WHERE id='$facility';");
 	  if($facility_id==$facility['id']){
 	   $a++;
 	  }
-}
+}*/
     
 	//echo "<br>";
 	//echo $a;
-	if($a<$capacity){}
-	else{
-	    echo "   <script>
-   setTimeout(function(){window.location.href='navNormalBooking.php';},0);
-   alert ('The number has reached the upper limit！');
-   </script>";
-   $available = false;
-			break;
- }}
+	}
  
  if($available){
 	$sql = "INSERT INTO booking(is_fixed) VALUES ('0');";

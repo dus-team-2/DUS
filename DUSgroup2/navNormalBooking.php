@@ -30,11 +30,11 @@ if(!isset($_SESSION["loginStatus"])){
 
     <?php
     include "config.php";
-    $sql = "SELECT id,name FROM facility";
+    $sql = "SELECT id,name FROM facility ORDER BY name ASC;";
     $result = mysqli_query($conn, $sql);
 
     //read users from database
-    $sql = "SELECT id,username FROM user";
+    $sql = "SELECT id,username FROM user ORDER BY username ASC;";
     $user_result = mysqli_query($conn, $sql);
     $user_set = array();
     while ($temp_row = mysqli_fetch_assoc($user_result)){
