@@ -26,7 +26,7 @@ require_once ('../controller/booking_detail.php');
                         echo 'Individual Booking';
                     } ?></h2>
                 <h2>ID : <?php echo $current_booking['id'] ?></h2>
-                <button class="btn btn-primary" onclick="window.location.href = '../controller/delete_booking.php?bid=<?php echo $current_booking['id'] ?>'">Delete</button>
+                <button class="btn btn-primary" onclick="if(confirm('delete this booking?')){window.location.href = '../controller/delete_booking.php?bid=<?php echo $current_booking['id'] ?>'}">Delete</button>
 
             </div>
 
