@@ -170,7 +170,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
                 <div class="form-row">
                     <div style="float:left;padding-right: 5%">
-                        <button type="submit" class="btn btn-primary" name="registerSubmit">Register</button>
+                        <input type="submit" class="btn btn-primary" name="registerSubmit" value="Register">
                     </div>
                     <div style="float:left;padding-right: 5%">
                         <a href="facilities.php" class="btn btn-primary">Cancel</a>
