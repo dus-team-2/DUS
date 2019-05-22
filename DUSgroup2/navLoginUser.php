@@ -65,37 +65,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
+<div class="individual_content">
+    <div class="individual_second_layer">
+        <div class="span9">
+            <h1>User Login</h1>
+        </div>
 
-<div class="span9">
-    <h1>User Login</h1>
+        <div class="span9">
+            <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
+
+                <div>
+                    <label class="col-form-label" for="usernameId">Username</label>
+                    <input type="text" class="form-control" placeholder="Username" id="usernameId" name="username">
+                    <span class="help-block"><?php echo $usernameError?></span>
+                </div>
+
+                <div>
+                    <label class="col-form-label" for="passwordId">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="passwordId" name="password">
+                    <a href="navLoginPwdForgot.php">Forgot password?</a>
+                    <span class="help-block"><?php echo $passwordError?></span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary" name="userLogin">Log in</button>
+                </div>
+
+                <div>
+                    Not a user yet?
+                    <a href="navLoginRegister.php">Register now!</a>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-<div class="span9">
-    <form action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
-
-        <div>
-            <label class="col-form-label" for="usernameId">Username</label>
-            <input type="text" class="form-control" placeholder="Username" id="usernameId" name="username">
-            <span class="help-block"><?php echo $usernameError?></span>
-        </div>
-
-        <div>
-            <label class="col-form-label" for="passwordId">Password</label>
-            <input type="password" class="form-control" placeholder="Password" id="passwordId" name="password">
-            <a href="navLoginPwdForgot.php">Forgot password?</a>
-            <span class="help-block"><?php echo $passwordError?></span>
-        </div>
-
-        <div>
-            <button type="submit" class="btn btn-warning" name="userLogin">Log in</button>
-        </div>
-
-        <div>
-            Not a user yet?
-            <a href="navLoginRegister.php">Register now!</a>
-        </div>
-    </form>
-</div>
 
 
 
