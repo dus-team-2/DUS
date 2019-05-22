@@ -72,7 +72,7 @@ if($available){
 			}
 			if($result){
 				echo "   <script>
-                            setTimeout(function(){window.location.href='navBookingsBlock.php';},0);
+                            setTimeout(function(){window.location.href='navBookingsOverallCalendar.php';},0);
 							alert ('Booked successfully!');
                     </script>";
 			}
