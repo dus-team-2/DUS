@@ -21,111 +21,120 @@ if(isset($_GET["adminFacilitiesAddName"])) {
     }
 }
 ?>
+<div class="individual_content">
+    <div class="individual_second_layer">
+        <div class="span9">
+            <h2>Add Facilities</h2>
+        </div>
 
-<div class="span9">
-    <h1>Add Facilities</h1>
+        <!-- Functions to alert if a value is not acceptable -->
+        <script>
+            function adminFacilitiesAdd(){
+                if(document.getElementById("adminFacilitiesAddName").value==""||document.getElementById("adminFacilitiesAddName").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Name.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddDescription").value==""||document.getElementById("adminFacilitiesAddDescription").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Description.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddPrice").value==""||document.getElementById("adminFacilitiesAddPrice").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Price.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddPrice").value<0){
+                    alert("The price can not be negative.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddCapacity").value==""||document.getElementById("adminFacilitiesAddCapacity").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Capacity.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddCapacity").value<0){
+                    alert("The capacity can not be negative.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddEmail").value==""||document.getElementById("adminFacilitiesAddEmail").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Contact Email.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddTel").value==""||document.getElementById("adminFacilitiesAddTel").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Contact Tel.");
+                    return false;
+                }
+                else if(document.getElementById("adminFacilitiesAddAddress").value==""||document.getElementById("adminFacilitiesAddAddress").value.match(/^\s+$/g)){
+                    alert("Please enter Facility Contact Address.");
+                    return false;
+                }
+            }
+        </script>
+
+        <!-- Add a facility -->
+        <div class = "span9">
+            <form  name = "Form" action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd" enctype="multipart/form-data">
+                <p class="explain">*Please input the information for adding a facility:</p>
+
+                <div class="form-row">
+                    <label for="adminFacilitiesAddName">Facility Name: </label>
+                    <input type="text" class="form-control" name="adminFacilitiesAddName" id="adminFacilitiesAddName" />
+                </div>
+
+                <div class="form-row">
+                    <label for="adminFacilitiesAddDescription">Facility Description: </label>
+                    <!--input type="text" class="form-control" name="adminFacilitiesAddDescription" id="adminFacilitiesAddDescription" /-->
+                    <textarea form="adminFacilitiesAdd"  class="form_textarea" rows="5" wrap="hard" name="adminFacilitiesAddDescription" id="adminFacilitiesAddDescription"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddPrice">Facility Price: </label>
+                        <input type="number" class="form-control" name="adminFacilitiesAddPrice" id="adminFacilitiesAddPrice" min="0" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddCapacity">Facility Capacity: </label>
+                        <input type="number" class="form-control" name="adminFacilitiesAddCapacity" id="adminFacilitiesAddCapacity" min="0" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddEmail">Facility Contact Email: </label>
+                        <input type="text" class="form-control" name="adminFacilitiesAddEmail" id="adminFacilitiesAddEmail" />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddTel">Facility Contact Tel: </label>
+                        <input type="text" class="form-control" name="adminFacilitiesAddTel" id="adminFacilitiesAddTel" />
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <label for="adminFacilitiesAddAddress">Facility Contact Address: </label>
+                    <input type="text" class="form-control" name="adminFacilitiesAddAddress" id="adminFacilitiesAddAddress" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddPic">Choose picture</label>
+                        <input type="file" class="form-control" name="adminFacilitiesAddPic" id="adminFacilitiesAddPic" />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="adminFacilitiesAddPic2">Choose picture 2</label>
+                        <input type="file" class="form-control" name="adminFacilitiesAddPic2" id="adminFacilitiesAddPic2" />
+                    </div>
+                </div>
+                <div class = "form-row">
+                    <input type="submit" class="btn btn-primary" onclick="return adminFacilitiesAdd();" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
-    <!-- Functions to alert if a value is not acceptable -->
     <script>
-        function adminFacilitiesAdd(){
-            if(document.getElementById("adminFacilitiesAddName").value==""||document.getElementById("adminFacilitiesAddName").value.match(/^\s+$/g)){
-                alert("Please enter Facility Name.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddDescription").value==""||document.getElementById("adminFacilitiesAddDescription").value.match(/^\s+$/g)){
-                alert("Please enter Facility Description.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddPrice").value==""||document.getElementById("adminFacilitiesAddPrice").value.match(/^\s+$/g)){
-                alert("Please enter Facility Price.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddPrice").value<0){
-                alert("The price can not be negative.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddCapacity").value==""||document.getElementById("adminFacilitiesAddCapacity").value.match(/^\s+$/g)){
-                alert("Please enter Facility Capacity.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddCapacity").value<0){
-                alert("The capacity can not be negative.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddEmail").value==""||document.getElementById("adminFacilitiesAddEmail").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Email.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddTel").value==""||document.getElementById("adminFacilitiesAddTel").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Tel.");
-                return false;
-            }
-            else if(document.getElementById("adminFacilitiesAddAddress").value==""||document.getElementById("adminFacilitiesAddAddress").value.match(/^\s+$/g)){
-                alert("Please enter Facility Contact Address.");
-                return false;
-            }
-        }
-    </script>
-
-    <!-- Add a facility -->
-    <div class = "span9">
-        <form  name = "Form" action="<?php echo $_SERVER["PHP_SELF"]?>" method="post" id="adminFacilitiesAdd" enctype="multipart/form-data">
-            <p>Please input the information for adding a facility:</p>
-
-            <p>
-                <label for="adminFacilitiesAddName">Facility Name: </label>
-                <input type="text" name="adminFacilitiesAddName" id="adminFacilitiesAddName" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddDescription">Facility Description: </label>
-                <input type="text" name="adminFacilitiesAddDescription" id="adminFacilitiesAddDescription" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddPrice">Facility Price: </label>
-                <input type="number" name="adminFacilitiesAddPrice" id="adminFacilitiesAddPrice" min="0" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddCapacity">Facility Capacity: </label>
-                <input type="number" name="adminFacilitiesAddCapacity" id="adminFacilitiesAddCapacity" min="0" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddEmail">Facility Contact Email: </label>
-                <input type="text" name="adminFacilitiesAddEmail" id="adminFacilitiesAddEmail" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddTel">Facility Contact Tel: </label>
-                <input type="text" name="adminFacilitiesAddTel" id="adminFacilitiesAddTel" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddAddress">Facility Contact Address: </label>
-                <input type="text" name="adminFacilitiesAddAddress" id="adminFacilitiesAddAddress" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddPic">Choose picture</label>
-                <input type="file" name="adminFacilitiesAddPic" id="adminFacilitiesAddPic" />
-            </p>
-
-            <p>
-                <label for="adminFacilitiesAddPic2">Choose picture 2</label>
-                <input type="file" name="adminFacilitiesAddPic2" id="adminFacilitiesAddPic2" />
-            </p>
-
-            <div class = "button">
-                <input type="submit" onclick="return adminFacilitiesAdd();" value="Submit" />
-            </div>
-        </form>
-    </div>
-
-    //show file name
-    <script>
+        //show file name
         var imageFile;
         $("input[name=adminFacilitiesAddPic]").change(function(e){
             imageFile = e.target.files[0];
