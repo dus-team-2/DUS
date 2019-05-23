@@ -262,12 +262,12 @@ WHERE facility.id = "'.$_POST['adminFacilitiesEditId'].'";';
 $result = $pdo->exec($sql);
 if($result){
     echo "<script>
-            alert('success!');
+            alert('Success!');
             window.location = 'facilities.php';
 </script>";}
 else{
 	echo "<script>
-            alert('fail!');
+            alert('Fail!');
             window.location = 'facilities.php';
 </script>";}
 }}

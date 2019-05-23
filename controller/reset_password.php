@@ -7,6 +7,7 @@
  */
 
 require_once ('../model/update.php');
+session_start();
 
 $current_user = $_POST['current_user'];
 $hashPassword = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
