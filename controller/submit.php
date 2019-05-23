@@ -79,7 +79,7 @@ if($fileInfo['error']==0){
     if(move_uploaded_file($fileInfo['tmp_name'],$destination)){
         update_user($_POST['user_id'], $_POST['update_username'], $_POST['update_gender'], $destination, (int)($_POST['update_is_uni_member']),$_POST['update_date_of_birth'], $_POST['update_tel'], $_POST['update_address']);
 
-        echo "<script>alert('profile updated!'); window.location.href='../DUSgroup2/navAccountInfo.php'</script>";
+        echo "<script>alert('Profile updated!'); window.location.href='../DUSgroup2/navAccountInfo.php'</script>";
 
     }else{
         echo 'profile modification failed';
@@ -89,7 +89,7 @@ if($fileInfo['error']==0){
     //echo "<script>alert($destination)</script>";
 
     update_user($_POST['user_id'], $_POST['update_username'], $_POST['update_gender'], $destination, (int)($_POST['update_is_uni_member']),$_POST['update_date_of_birth'], $_POST['update_tel'], $_POST['update_address']);
-    echo "<script>alert('profile updated!'); window.location.href='../DUSgroup2/navAccountInfo.php'</script>";
+    echo "<script>alert('Profile updated!'); window.location.href='../DUSgroup2/navAccountInfo.php'</script>";
 } else{
     //error info
     switch($fileInfo['error']){

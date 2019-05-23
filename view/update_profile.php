@@ -48,7 +48,7 @@ require_once ('../controller/update_profile.php');
                             <input type="button" id="btn_open_file" name="file" class="button" value="open">
                             <input id="file" type="file" name="update_pic" accept="image/*"   />
                         </div>
-                        <input type="button" id="clipBtn" class="button" value="cut">
+                        <input type="button" id="clipBtn" class="button" value="confirm">
                     </div>
                     <div id="view"></div>
                 </article>
