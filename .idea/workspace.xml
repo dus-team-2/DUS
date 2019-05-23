@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a3ed9cf-8e37-470c-be8f-b97b35aa2204" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DUSgroup2/navLoginQuestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/DUSgroup2/navLoginQuestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/update_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/update_profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/update_profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1660">
-              <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
+            <state relative-caret-position="780">
+              <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
               </folding>
@@ -62,20 +61,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
+            <state relative-caret-position="660">
               <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/submit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+            <state relative-caret-position="527">
+              <caret line="95" column="15" lean-forward="true" selection-start-line="95" selection-start-column="15" selection-end-line="95" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -160,9 +159,10 @@
         <option value="$PROJECT_DIR$/controller/reset_password.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navFacilitiesAdd.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navFacilitiesEdit.php" />
-        <option value="$PROJECT_DIR$/view/update_profile.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navLoginQuestion.php" />
         <option value="$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php" />
+        <option value="$PROJECT_DIR$/view/update_profile.php" />
+        <option value="$PROJECT_DIR$/controller/submit.php" />
       </list>
     </option>
   </component>
@@ -260,12 +260,12 @@
       <workItem from="1558443861009" duration="4643000" />
       <workItem from="1558522076839" duration="721000" />
       <workItem from="1558523235132" duration="62000" />
-      <workItem from="1558523326115" duration="16383000" />
+      <workItem from="1558523326115" duration="16769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41044000" />
+    <option name="totallyTimeSpent" value="41430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -615,13 +615,6 @@
     <entry file="file://$PROJECT_DIR$/controller/profile.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/booking_detail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-709">
@@ -633,20 +626,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/update_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -657,10 +647,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DUSgroup2/navLoginPwdForgot.php">
+    <entry file="file://$PROJECT_DIR$/view/update_profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="44" column="19" lean-forward="true" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        <state relative-caret-position="780">
+          <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/submit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="95" column="15" lean-forward="true" selection-start-line="95" selection-start-column="15" selection-end-line="95" selection-end-column="15" />
         </state>
       </provider>
     </entry>
