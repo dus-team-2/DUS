@@ -32,38 +32,44 @@ unset($pdo);
 
 ?>
 
-<div class="span9">
-    <h1>Recovery Question</h1>
+<div class="individual_content">
+    <div class="individual_second_layer">
+        <div class="span9">
+            <h2>Recovery Question</h2>
+        </div>
+
+        <div class="span9">
+            <form method="post" action="pwdSender.php">
+                <div>
+                    <input type="hidden" name="C_name" value="<?php echo $data["username"]?>" >
+                </div>
+
+                <div>
+                    <input type="hidden" name="C_email" value="<?php echo $data["email"]?>" >
+                </div>
+
+                <div class="form-row">
+                    <label>Your recovery question:</label>
+                    <textarea class="form_textarea" rows="2" readonly="readonly"><?php echo $data["security_question"];?></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="answerId">Your answer:</label>
+                    <textarea class="form_textarea"  placeholder="Your answer" id="answerId" name="answer" required></textarea>
+                </div>
+
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    <a href="navLoginUser.php" class="btn btn-primary">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
 </div>
 
-<div class="span9">
-    <form method="post" action="pwdSender.php">
-        <div>   
-            <input type="hidden" name="C_name" value="<?php echo $data["username"]?>" >
-        </div>
-
-        <div>
-            <input type="hidden" name="C_email" value="<?php echo $data["email"]?>" >
-        </div>
-
-        <div>
-            <label>Your recovery question:</label>
-            <textarea style="width:400px" readonly="readonly"><?php echo $data["security_question"];?></textarea>
-        </div>
-
-        <div>
-            <label for="answerId">Your answer:</label>
-            <input type="textarea" style="width:400px" placeholder="Your answer" id="answerId" name="answer" required>
-        </div>
-        
-        <br>
-        <div>
-            <button type="submit" class="btn btn-warning" name="submit">Submit</button>
-            <a href="navLoginUser.php" class="btn btn-danger">Cancel</a>
-        </div>
-
-    </form>
-</div>
 
 
 
