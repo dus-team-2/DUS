@@ -115,7 +115,7 @@ require_once ('../controller/update_profile.php');
                         <option value="Other" <?php if(strcmp($current_user_all['gender'], 'Other')){
                             echo "selected = 'selected'";
                         } ?>>Other</option>
-                        <option value="Better not to say" <?php if(strcmp($current_user_all['Better not to say'], 'Male')){
+                        <option value="Better not to say" <?php if(strcmp($current_user_all['Better not to say'], 'Better not to say')){
                             echo "selected = 'selected'";
                         } ?>>Better not to say</option>
                     </select>
