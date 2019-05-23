@@ -195,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 );";
     $pdo->exec($sql);
     echo "<script>
-            alert('success!');
+            alert('Success!');
             window.location = 'facilities.php';
         </script>";
 }}
